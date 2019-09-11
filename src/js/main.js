@@ -18,6 +18,8 @@ document.addEventListener('DOMContentLoaded', event => {
     const ShrinkHeader = new Utils.ShrinkHeader();
     ShrinkHeader.init();
 
+    Utils.backToTop();
+
     if (document.getElementById('category-list')) {
         DrinksAPI.getCocktails();
     }

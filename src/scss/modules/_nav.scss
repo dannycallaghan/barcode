@@ -40,20 +40,18 @@ header {
                     border-style: solid;
                     transition: 0.5s;
 
-                    span {
+                    i {
                         font-size: #{$baseFontSize - 2}rem;
-                        display: block;
-                        line-height: 1rem;
                         will-change: transform;
                         transition: 0.5s;
                         transform: rotate(0);
                         position: absolute;
-                        top: 64px;
-                        left: 36px;
+                        top: 52px;
+                        left: 28px;
                     }
 
                     &:hover {
-                        span {
+                        i {
                             transform: rotateY(180deg);
                         }
                     }
@@ -81,9 +79,6 @@ header {
                     li {
                         a {
                             line-height: 80px;
-                            span {
-                                top: 14px;
-                            } 
                         }
                     }
                 }
@@ -99,8 +94,8 @@ header {
                 li {
                     a {
                         width: 100px;
-                        span {
-                            left: 44px;
+                        i {
+                            left: 36px;
                         }
                     }
                 }
@@ -116,8 +111,8 @@ header {
                 li {
                     a {
                         width: 140px;
-                        span {
-                            left: 66px;
+                        i {
+                            left: 56px;
                         }
                     }
                 }

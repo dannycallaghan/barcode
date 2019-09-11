@@ -17,9 +17,10 @@ Utils.ShrinkHeader = class {
 
     /**
      * Initialise the header script
+     * 
+     * @return void
      */
     init () {
-        console.warn('init');
         // Listen for the scroll event */
         window.addEventListener('scroll', e => {
             // Event heard. Call the scrollPage function */
@@ -33,6 +34,8 @@ Utils.ShrinkHeader = class {
 
     /**
      * Adds the scrolled class
+     * 
+     * @return void
      */
     scrollPage () {
         const body = document.body;
@@ -50,6 +53,8 @@ Utils.ShrinkHeader = class {
 
     /**
      * Returns the current scroll position of the page
+     * 
+     * @return Window y position
      */
     scrolledPos () {
         return window.pageYOffset || document.documentElement.scrollTop;
@@ -72,6 +77,8 @@ Utils.Drawer = class {
 
     /**
      * Initialise the drawer script
+     * 
+     * @return void
      */
     init () {
         // Add a click event to every element with the toggle class
@@ -92,6 +99,8 @@ Utils.Drawer = class {
 
     /**
      * Add or remove the toggle class to show the drawer
+     * 
+     * @return void
      */
     toggleDrawer () {
         console.warn('clicked');
@@ -103,6 +112,8 @@ Utils.Drawer = class {
 
     /**
      * Toggles the ARIA attribute of the drawer.
+     * 
+     * @return void
      */
     toggleAriaAttr () {
         if (this.body.classList.contains(this.drawerClass)) {
@@ -124,6 +135,8 @@ Utils.TemplateEngine = class {
 
     /**
     * Stores the template data, so we don't keep querying the DOM
+    * 
+    * @return Empty object
     */
     static get CACHE () {
         return {};
@@ -131,6 +144,12 @@ Utils.TemplateEngine = class {
 
     /**
     * Takes the template, model and destination to pass on to the templating function
+    *
+    * @param {string}      template - ID of script template
+    * @param {object}   model - Data model to pass to template 
+    * @param {string}      destination - ID of where the finished template is going to go
+    * 
+    *@return void
     */
     static createHTML (template, model, destination) {
         const element = document.getElementById(destination);
@@ -142,6 +161,11 @@ Utils.TemplateEngine = class {
     /**
     * Combines dynamic data with our templates and returns the result
     * John Resig – http://ejohn.org/ – MIT Licensed
+    * 
+    * @param {string}   str - ID of script template
+    * @param {object}   data - Data model to pass to template
+    * 
+    * @return The finished template
     */
     static templateToHTML (str, data) {
         const fn = !/\W/.test(str) ?
@@ -173,32 +197,19 @@ Utils.TemplateEngine = class {
 };
 
 /**
- * FIREBASE CLASS
- * Looks after the Firebase communication
+ * Back To Top functionality
+ * 
+ * @return void
  */
-Utils.Firebase = class {
-
-    /**
-    * Initialises the app
-    */
-    static init () {
-
-        if (firebase.apps.length) {
-            return;
-        }
-
-        const FirebaseConfig = {
-            apiKey: 'AIzaSyD85xYzvb9MuFL0Qhl8rRo816ynrmyltAM',
-            authDomain: 'magsmag-d7978.firebaseapp.com',
-            projectId: 'magsmag-d7978'
-        };
-
-        firebase.initializeApp(FirebaseConfig);
-        firebase.firestore().enablePersistence()
-            .catch(function(err) {});
+Utils.backToTop = function () {
+    const el = document.getElementById('back-to-top');
+    if (el) {
+        el.addEventListener('click', (e) => {
+            window.scrollTo(0, 0);
+            e.preventDefault();
+        }, false);
     }
-
-};
+}
 
 
 export default Utils;

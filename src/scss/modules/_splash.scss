@@ -1,4 +1,4 @@
-section.splash-video-wrapper {
+.splash-video-wrapper {
     background-color: red;
     width: 100%;
     height: 100vh;
@@ -6,7 +6,7 @@ section.splash-video-wrapper {
     justify-content: center;
     align-items: flex-start;
     overflow: hidden;
-    position: fixed;
+    position: relative;
     top: 208px;
     left: 0;
     transition: 0.5s;
@@ -22,8 +22,9 @@ section.splash-video-wrapper {
 }
 
 body.body--scrolled {
-    section.splash-video-wrapper {
+    .splash-video-wrapper {
         top: 118px;
+        height: calc(100vh - 10px);
     }
 }
 
@@ -60,7 +61,7 @@ body.body--scrolled {
 }
 
 @media(min-width: 460px) {
-    section.splash-video-wrapper {
+    .splash-video-wrapper {
         video {
             width: 960px;
         }
@@ -100,7 +101,7 @@ body.body--scrolled {
 }
 
 @media(min-width: 920px) {
-    section.splash-video-wrapper {
+    .splash-video-wrapper {
         video {
             width: 100%;
         }

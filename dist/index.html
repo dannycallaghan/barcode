@@ -41,82 +41,80 @@
     <!-- Header -->
     <header name="top">
 
-            <div class="header__row">
+        <div class="header__row">
 
-                <!-- Logo -->
-                <div class="logo">
-                    <h1><a href="/"><span>o</span>BarCode<span>p</span></a></h1>
-                </div>
-
-                <!-- Mobile nav drawer button -->
-                <button type="button" class="toggle-drawer">
-                    <i class="material-icons">menu</i>
-                </button>
-                
-                <!-- Top navigation -->
-                <nav>
-                    <ul class="menu">
-                        <li><a href="/news/" title="News"><span>&#10033;</span>News</a></li>
-                        <li><a href="/cocktail/?id=random" title="Random"><span>&#10033;</span>Random</a></li>
-                        <li><a href="/popular/?list=popular" title="Popular"><span>&#10033;</span>Popular</a></li>
-                        <li><a href="/ingredient/" title="Base"><span>&#10033;</span>Base</a></li>
-                        <li><a href="/virgin/?list=virgin" title="Home"><span>&#10033;</span>Virgin</a></li>
-                    </ul>
-                </nav>
-
+            <!-- Logo -->
+            <div class="logo">
+                <h1><a href="/"><span>o</span>BarCode<span>p</span></a></h1>
             </div>
 
-            <!-- Breadcrumbs -->
-            <div class="header__row">
-            </div>
-            
-        </header>
-
-        <!-- Mobile nav drawer -->
-        <div class="drawer" aria-hidden="true">
-
-            <!-- Closes the mobile nav drawer-->
+            <!-- Mobile nav drawer button -->
             <button type="button" class="toggle-drawer">
-                <i class="material-icons">close</i>
+                <i class="material-icons">menu</i>
             </button>
-
-            <!-- Mobile nav -->
+            
+            <!-- Top navigation -->
             <nav>
                 <ul class="menu">
-                    <li><a href="/news/" title="News"><span>&#10033;</span>News</a></li>
-                    <li><a href="/cocktail/?id=random" title="Random"><span>&#10033;</span>Random</a></li>
-                    <li><a href="/popular/?list=popular" title="Popular"><span>&#10033;</span>Popular</a></li>
-                    <li><a href="/ingredient/" title="Base"><span>&#10033;</span>Base</a></li>
-                    <li><a href="/virgin/?list=virgin" title="Home"><span>&#10033;</span>Virgin</a></li>
+                    <li><a href="/news/" title="News"><i class="material-icons">chrome_reader_mode</i>News</a></li>
+                    <li><a href="/cocktail/?id=random" title="Random"><i class="material-icons">help_outline</i>Random</a></li>
+                    <li><a href="/popular/?list=popular" title="Popular"><i class="material-icons">stars</i>Popular</a></li>
+                    <li><a href="/ingredient/" title="Base"><i class="material-icons">local_drink</i>Base</a></li>
+                    <li><a href="/virgin/?list=virgin" title="Home"><i class="material-icons">drive_eta</i>Virgin</a></li>
                 </ul>
             </nav>
+
         </div>
 
-        <!-- Main content -->
-        <main class="content">
+        <!-- Breadcrumbs -->
+        <div class="header__row">
+        </div>
+        
+    </header>
 
-            <section class="splash-video-wrapper">
-                <!-- Homepage video -->
-                <video autoplay loop muted poster="/images/poster-large-2x.jpg">
-                    <source src="/video/cocktail-x-sm.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
-                    <source src="/video/cocktail-x-sm.webm" type='video/webm; codecs="vp8, vorbis"'>
-                    <source src="/video/cocktail-x-sm.ogv" type='video/ogg; codecs="theora, vorbis"'>
-                    <p>Sorry, your browser doesn't support embedded videos.</p>
-                </video>
-            </section>
+    <!-- Mobile nav drawer -->
+    <div class="drawer" aria-hidden="true">
 
-            <div style="height: 2000px;"></div>
+        <!-- Closes the mobile nav drawer-->
+        <button type="button" class="toggle-drawer">
+            <i class="material-icons">close</i>
+        </button>
 
-        </main>
+        <!-- Mobile nav -->
+        <nav>
+            <ul class="menu">
+                <li><a href="/news/" title="News"><i class="material-icons">chrome_reader_mode</i>News</a></li>
+                <li><a href="/cocktail/?id=random" title="Random"><i class="material-icons">help_outline</i>Random</a></li>
+                <li><a href="/popular/?list=popular" title="Popular"><i class="material-icons">stars</i>Popular</a></li>
+                <li><a href="/ingredient/" title="Base"><i class="material-icons">local_drink</i>Base</a></li>
+                <li><a href="/virgin/?list=virgin" title="Home"><i class="material-icons">drive_eta</i>Virgin</a></li>
+            </ul>
+        </nav>
+    </div>
 
-        <!-- Footer -->
-        <footer class="footer"></footer>
+    <!-- Main content -->
+    <main>
+        <section class="splash-video-wrapper">
+            <!-- Homepage video -->
+            <video autoplay loop muted poster="/images/poster-large-2x.jpg">
+                <source src="/video/cocktail-x-sm.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+                <source src="/video/cocktail-x-sm.webm" type='video/webm; codecs="vp8, vorbis"'>
+                <source src="/video/cocktail-x-sm.ogv" type='video/ogg; codecs="theora, vorbis"'>
+                <p>Sorry, your browser doesn't support embedded videos.</p>
+            </video>
+        </section>
+    </main>
 
-        <!-- Adds a cloak to the content when the mobile drawer is open -->
-        <div id="cloak"></div>
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent mattis leo nec neque venenatis aliquet. Nullam eget semper purus, non consectetur metus. Proin convallis felis sed tincidunt consequat. Nullam massa lectus, porta ut lobortis id, aliquam eu metus. Nam eu risus ut sapien dignissim iaculis. Maecenas eu molestie ex. Integer feugiat sem quis quam sollicitudin lobortis. Nam malesuada urna dolor, quis aliquet eros auctor ac. Duis id suscipit libero, vitae fringilla enim. Nulla pharetra, arcu vitae fermentum posuere, eros nibh accumsan nunc, vitae dapibus elit justo vitae justo. Vestibulum eu libero sed erat dictum pharetra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque odio arcu, malesuada efficitur tempus sed, sagittis convallis purus.</p>
+    </footer>
 
-        <!-- Our script -->
-        <script src="/js/main.min.js"></script>
+    <!-- Adds a cloak to the content when the mobile drawer is open -->
+    <div id="cloak"></div>
+
+    <!-- Our script -->
+    <script src="/js/main.min.js"></script>
         
     </body>
 </html>
