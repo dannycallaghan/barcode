@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	    <meta charset="utf-8" />
+	    <title>Bar Code</title>
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	    <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <!-- Web app metadata and icons -->
+        <meta name="theme-color" content="#F2F2B3">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="application-name" content="Bar Code">
+        <link rel="shortcut icon" href="/favicon.ico" sizes="48x48">
+        <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/images/icons//apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/images/icons//apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/images/icons//apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/images/icons//apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/images/icons//apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/images/icons//apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/images/icons//apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/icons//apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="/images/icons//android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/icons//favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/images/icons//favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/icons//favicon-16x16.png">
+        <link rel="manifest" href="/manifest.json">
+        <meta name="msapplication-TileColor" content="#F2F2B3">
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+        <meta name="theme-color" content="#F2F2B3">
+        <!-- Prefetch The Cocktail DB-->
+        <link rel="dns-prefetch" href="https://www.thecocktaildb.com">
+        <!-- CSS -->
+        <link rel="stylesheet" href="/css/style.min.css">
+    </head>
+    <body>
+
+    <!-- Skip link - activated on 'tab' -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header name="top">
+
+            <div class="header__row">
+
+                <!-- Logo -->
+                <div class="logo">
+                    <h1><a href="/"><span>o</span>BarCode<span>p</span></a></h1>
+                </div>
+
+                <!-- Mobile nav drawer button -->
+                <button type="button" class="toggle-drawer">
+                    <i class="material-icons">menu</i>
+                </button>
+                
+                <!-- Top navigation -->
+                <nav>
+                    <ul class="menu">
+                        <li><a href="/news/" title="News"><span>&#10033;</span>News</a></li>
+                        <li><a href="/cocktail/?id=random" title="Random"><span>&#10033;</span>Random</a></li>
+                        <li><a href="/popular/?list=popular" title="Popular"><span>&#10033;</span>Popular</a></li>
+                        <li><a href="/ingredient/" title="Base"><span>&#10033;</span>Base</a></li>
+                        <li><a href="/virgin/?list=virgin" title="Home"><span>&#10033;</span>Virgin</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+
+            <!-- Breadcrumbs -->
+            <div class="header__row">
+            </div>
+            
+        </header>
+
+        <!-- Mobile nav drawer -->
+        <div class="drawer" aria-hidden="true">
+
+            <!-- Closes the mobile nav drawer-->
+            <button type="button" class="toggle-drawer">
+                <i class="material-icons">close</i>
+            </button>
+
+            <!-- Mobile nav -->
+            <nav>
+                <ul class="menu">
+                    <li><a href="/news/" title="News"><span>&#10033;</span>News</a></li>
+                    <li><a href="/cocktail/?id=random" title="Random"><span>&#10033;</span>Random</a></li>
+                    <li><a href="/popular/?list=popular" title="Popular"><span>&#10033;</span>Popular</a></li>
+                    <li><a href="/ingredient/" title="Base"><span>&#10033;</span>Base</a></li>
+                    <li><a href="/virgin/?list=virgin" title="Home"><span>&#10033;</span>Virgin</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main content -->
+        <main class="content">
+
+            <section class="splash-video-wrapper">
+                <!-- Homepage video -->
+                <video autoplay loop muted poster="/images/poster-large-2x.jpg">
+                    <source src="/video/cocktail-x-sm.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+                    <source src="/video/cocktail-x-sm.webm" type='video/webm; codecs="vp8, vorbis"'>
+                    <source src="/video/cocktail-x-sm.ogv" type='video/ogg; codecs="theora, vorbis"'>
+                    <p>Sorry, your browser doesn't support embedded videos.</p>
+                </video>
+            </section>
+
+            <div style="height: 2000px;"></div>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer"></footer>
+
+        <!-- Adds a cloak to the content when the mobile drawer is open -->
+        <div id="cloak"></div>
+
+        <!-- Our script -->
+        <script src="/js/main.min.js"></script>
+        
+    </body>
+</html>

@@ -1,0 +1,111 @@
+section.splash-video-wrapper {
+    background-color: red;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
+    position: fixed;
+    top: 208px;
+    left: 0;
+    transition: 0.5s;
+
+    p {
+        padding: 16px;
+        margin: 0;
+    }
+
+    video {
+        width: 760px;
+    }
+}
+
+body.body--scrolled {
+    section.splash-video-wrapper {
+        top: 118px;
+    }
+}
+
+#splash {
+    min-height: 1500px;
+    transition: 0.5s;
+    background-image: url(/images/poster-xsmall-2x.jpg);
+    background-repeat: no-repeat;
+    background-position: -128px 160px;
+    background-attachment: fixed;
+
+    $size: 190%;
+    -webkit-background-size: $size;
+    -moz-background-size: $size;
+    -o-background-size: $size;
+    background-size: $size;
+}
+
+body.body--scrolled {
+    #splash {
+        background-position: -128px 90px;
+    }
+}
+
+@media(min-width: 400px) {
+    #splash {
+        background-position: -180px 160px;
+    }
+    body.body--scrolled {
+        #splash {
+            background-position: -180px 90px;
+        }
+    }
+}
+
+@media(min-width: 460px) {
+    section.splash-video-wrapper {
+        video {
+            width: 960px;
+        }
+    }
+    #splash {
+        background-image: url(/images/poster-medium-2x.jpg); 
+        background-position: -230px 160px;
+        $size: 220%;
+        -webkit-background-size: $size;
+        -moz-background-size: $size;
+        -o-background-size: $size;
+        background-size: $size;
+    }
+    body.body--scrolled {
+        #splash {
+            background-position: -230px 90px;
+        }
+    }
+}
+
+@media(min-width: 460px) {
+    #splash {
+        background-position-x: center;
+        background-position-y: 160px;
+        $size: cover;
+        -webkit-background-size: $size;
+        -moz-background-size: $size;
+        -o-background-size: $size;
+        background-size: $size;
+    }
+    body.body--scrolled {
+        #splash {
+            background-position-x: center;
+            background-position-y: 90px;
+        }
+    }
+}
+
+@media(min-width: 920px) {
+    section.splash-video-wrapper {
+        video {
+            width: 100%;
+        }
+    }
+    #splash {
+        background-image: url(/images/poster-large-2x.jpg); 
+    }
+}

@@ -1,0 +1,114 @@
+body {
+
+    .toggle-drawer {
+        padding: 12px;
+        position: absolute;
+        z-index: 5;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+        color: $dark;
+        background-color: transparent;
+        border: none;
+    
+        &:hover,
+        &:active {
+            color: $orange;
+        }
+        
+    }
+
+    .drawer {
+        width: 240px;
+        position: fixed;
+        top: 0;
+        background-color: $pale;
+        height: 100%;
+        z-index: 5;
+
+        -webkit-transition: right 0.2s;
+        -moz-transition: right 0.2s;
+        transition: right 0.2s;
+        right: -240px;
+
+        nav {
+    
+            ul {
+                list-style: none;
+                margin: 48px 0 0 0;
+                padding: 0;
+
+                li {
+
+                    &:nth-child(1) { a { background-color: $darkBlue; border-color: $darkBlue; &:hover, &.active { border-color: $green; } } }
+                    &:nth-child(2) { a { background-color: $lightBlue; border-color: $lightBlue; &:hover, &.active { border-color: $orange; } } }
+                    &:nth-child(3) { a { background-color: $green; border-color: $green; &:hover, &.active { border-color: $dark; } } }
+                    &:nth-child(4) { a { background-color: $orange; border-color: $orange; &:hover, &.active { border-color: $darkBlue; } } }
+                    &:nth-child(5) { a { background-color: $dark; border-color: $dark; &:hover, &.active { border-color: $lightBlue; } } }
+    
+                    a {
+                        font-family: 'Roboto Condensed', $defaultFontStack;
+                        color: #ffffff;
+                        text-decoration: none;
+                        font-size: #{$baseFontSize + 0.3}rem;
+                        line-height: #{$baseFontSize + 2.6}rem;
+                        display: block;
+                        padding: 8px 8px 8px 16px;
+                        border-width: 0 0 0 10px;
+                        border-style: solid;
+
+                        span { 
+                            padding-right: 8px;
+                        }
+                        
+                        .material-icons {
+                            font-size: 2.5rem;
+                            vertical-align: middle;
+                            line-height: 2.5rem;
+                            padding-right: 8px;
+                        }
+                    }
+    
+                }
+    
+            }
+            
+        }
+    }
+
+    &.body--drawer-visible {
+
+        .drawer {
+            right: 0;
+        }
+
+    }
+
+    #cloak {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 4;
+        display: none;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    &.body--drawer-visible {
+
+        #cloak {
+            display: block;
+        }
+
+    }
+
+}
+
+@media(min-width: 766px) {
+    body {
+        .toggle-drawer {
+            display: none !important;
+        }
+    }
+}
