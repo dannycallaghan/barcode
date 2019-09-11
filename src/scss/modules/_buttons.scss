@@ -1,0 +1,28 @@
+.button {
+    background: #ccc;
+    color: $defaultTextColor;
+    box-shadow: $boxShadow;
+    border: none;
+    border-radius: 2px;
+    position: relative;
+    height: 36px;
+    min-width: 64px;
+    text-transform: uppercase;
+    padding: 0 16px;
+    display: inline-block;
+    font-family: 'Roboto Condensed', $defaultFontStack;
+    font-size: #{$baseFontSize}rem;
+    will-change: box-shadow;
+    font-weight: 500;
+    transition: box-shadow .2s cubic-bezier(.4,0,1,1), background-color .2s cubic-bezier(.4,0,.2,1), color .2s cubic-bezier(.4,0,.2,1);
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    line-height: 36px;
+    vertical-align: middle;
+    text-decoration: none;
+
+    &:active {
+        box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
+    }
+}

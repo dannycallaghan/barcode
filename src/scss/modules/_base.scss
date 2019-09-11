@@ -21,4 +21,19 @@ body {
 
 main {
     flex: 1 0 auto;
+    position: relative;
+    z-index: 2;
+
+    section.cocktail-details {
+        background-color: $pale;
+        margin: 240px auto 32px auto;
+        width: 90%;
+        box-shadow: $boxShadow;
+
+        &.cocktail-details {
+            margin-bottom: 132px;
+            padding: 32px;
+        }
+    }
+
 }

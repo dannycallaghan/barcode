@@ -153,6 +153,7 @@ Utils.TemplateEngine = class {
     */
     static createHTML (template, model, destination) {
         const element = document.getElementById(destination);
+        console.warn(destination, element)
         if (element) {
             element.innerHTML = this.templateToHTML(template, model);
         }
@@ -168,6 +169,7 @@ Utils.TemplateEngine = class {
     * @return The finished template
     */
     static templateToHTML (str, data) {
+        console.warn('still here');
         const fn = !/\W/.test(str) ?
             this.CACHE[str] = this.CACHE[str] ||
             this.templateToHTML(document.getElementById(str).innerHTML) :
@@ -209,6 +211,23 @@ Utils.backToTop = function () {
             e.preventDefault();
         }, false);
     }
+}
+
+/**
+ * Starts the splash screen by removing the pending class from the body
+ * 
+ * @return void
+ */
+Utils.startSplash = function () {
+    const firstTimer = 500;
+    const secondTimer = 3000;
+    const body = document.body;
+    window.setTimeout(() => {
+        body.classList.remove('splash-1');
+    }, firstTimer);
+    window.setTimeout(() => {
+        body.classList.remove('splash-2');
+    }, secondTimer);
 }
 
 

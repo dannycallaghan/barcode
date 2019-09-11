@@ -1,0 +1,14 @@
+
+.frames {
+    font-family: 'Beradon Frames';
+    text-align: center;
+
+    &.frames--large {
+        $rem: 9;
+        font-size: 20rem;
+        line-height: #{$rem}rem;
+        color: $orange;
+        margin-bottom: -#{$rem}rem;
+    }
+    
+}

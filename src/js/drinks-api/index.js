@@ -114,6 +114,7 @@ class DrinksAPI {
     }
 
     static getCocktail () {
+        console.warn('still called');
         const query = window.location.search;
         if (query && query.indexOf('id=')) {
             const splitQuery = query.split('id=')[1];

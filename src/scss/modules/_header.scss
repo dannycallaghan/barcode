@@ -2,7 +2,7 @@ header {
     min-width: 320px;
     position: fixed;
     width: 100%;
-    z-index: 2;
+    z-index: 3;
     background-color: $pale;
     box-shadow: $boxShadow;
     top: 0;
@@ -19,7 +19,7 @@ header {
                 transition: all 0.5s;
                 text-align: center;
                 h1 {
-                    margin: 66px auto 0 auto;
+                    margin: 60px auto 0 auto;
                     
                     a {
                         font-family: 'Beradon Script', $defaultFontStack;
@@ -41,6 +41,15 @@ header {
                             }
                         }
                     }
+                }
+
+                h2 {
+                    font-family: 'Roboto Condensed', $defaultFontStack;
+                    font-size: #{$baseFontSize + .1}rem;
+                    line-height: #{$baseFontSize + 1}rem;
+                    text-transform: uppercase;
+                    margin: -20px 0 0 0;
+                    color: $dark;
                 }
             }
 
@@ -64,11 +73,15 @@ body.body--scrolled {
                 height: 90px;
                 .logo {
                     h1 {
-                        margin: 26px auto 32px auto;
+                        margin: 20px auto 32px auto;
                         a {
                             font-size: #{$baseFontSize + 2.4}rem;
                             line-height: #{$baseFontSize + 3}rem;
                         }
+                    }
+                    h2 {
+                        font-size: #{$baseFontSize - 0.2}rem;
+                        margin: -48px 0 0 0;
                     }
                 }
             }
@@ -82,6 +95,7 @@ body.body--scrolled {
             &:first-child {
                 .logo {
                     h1 {
+                        margin-top: 52px;
                         a {
                             font-size: #{$baseFontSize + 4}rem;
                             line-height: #{$baseFontSize + 5}rem;
@@ -94,6 +108,9 @@ body.body--scrolled {
                             }
                         }
                     }
+                    h2 {
+                        font-size: #{$baseFontSize + .3}rem;
+                    }
                 }
             }
         }
@@ -104,11 +121,14 @@ body.body--scrolled {
                 &:first-child {
                     .logo {
                         h1 {
-                            margin: 26px auto 32px auto;
+                            margin: 20px auto 32px auto;
                             a {
-                                font-size: #{$baseFontSize + 3}rem;
-                                line-height: #{$baseFontSize + 3.4}rem;
+                                font-size: #{$baseFontSize + 2.8}rem;
+                                line-height: #{$baseFontSize + 3.2}rem;
                             }
+                        }
+                        h2 {
+                            font-size: #{$baseFontSize + 0}rem;
                         }
                     }
                 }
@@ -123,28 +143,14 @@ body.body--scrolled {
             &:first-child {
                 .logo {
                     h1 {
-                        margin-top: 54px;
+                        margin-top: 46px;
                         a {
                             font-size: #{$baseFontSize + 5}rem;
                             line-height: #{$baseFontSize + 6}rem;
                         }
                     }
-                }
-            }
-        }
-    }
-    body.body--scrolled {
-        header {
-            .header__row {
-                &:first-child {
-                    .logo {
-                        h1 {
-                            margin: 24px auto 32px auto;
-                            a {
-                                font-size: #{$baseFontSize + 3.8}rem;
-                                line-height: #{$baseFontSize + 4.2}rem;
-                            }
-                        }
+                    h2 {
+                        font-size: #{$baseFontSize + 0.5}rem;
                     }
                 }
             }
@@ -155,18 +161,20 @@ body.body--scrolled {
 @media(min-width: 766px) {
     header {
         .header__row:first-child {
-            //height: 180px;
             overflow: hidden;
             .logo {
                 position: absolute;
                 left: 16px;
-                top: 64px;
+                top: 60px;
                 h1 {
                     margin: 0;
                     a {
                         font-size: #{$baseFontSize + 3.6}rem;
                         line-height: #{$baseFontSize + 4}rem;
                     }
+                }
+                h2 {
+                    font-size: #{$baseFontSize + 0.2}rem;
                 }
             }
         }
@@ -179,13 +187,17 @@ body.body--scrolled {
                     .logo {
                         position: absolute;
                         left: 16px;
-                        top: 22px;
+                        top: 18px;
                         h1 {
                             margin: 0;
                             a {
-                                font-size: #{$baseFontSize + 3.6}rem;
-                                line-height: #{$baseFontSize + 4}rem;
+                                font-size: #{$baseFontSize + 2.8}rem;
+                                line-height: #{$baseFontSize + 3.2}rem;
                             }
+                        }
+                        h2 {
+                            margin-top: -18px;
+                            font-size: #{$baseFontSize + 0}rem;
                         }
                     }
                 }
@@ -198,7 +210,7 @@ body.body--scrolled {
     header {
         .header__row:first-child {
             .logo {
-                top: 56px;
+                top: 52px;
                 h1 {
                     a {
                         font-size: #{$baseFontSize + 4}rem;
@@ -214,7 +226,7 @@ body.body--scrolled {
     header {
         .header__row:first-child {
             .logo {
-                top: 66px;
+                top: 60px;
                 h1 {
                     a {
                         font-size: #{$baseFontSize + 3.6}rem;
@@ -230,6 +242,7 @@ body.body--scrolled {
     header {
         .header__row:first-child {
             .logo {
+                top: 56px;
                 h1 {
                     a {
                         font-size: #{$baseFontSize + 4.2}rem;
@@ -245,12 +258,15 @@ body.body--scrolled {
     header {
         .header__row:first-child {
             .logo {
-                top: 56px;
+                top: 50px;
                 h1 {
                     a {
                         font-size: #{$baseFontSize + 5}rem;
                         line-height: #{$baseFontSize + 5.6}rem;
                     }
+                }
+                h2 {
+                    font-size: #{$baseFontSize + 0.4}rem;
                 }
             }
         }
@@ -268,6 +284,9 @@ body.body--scrolled {
                         line-height: #{$baseFontSize + 4.6}rem;
                     }
                 }
+                h2 {
+                    font-size: #{$baseFontSize + 0.3}rem;
+                }
             }
         }
     }
@@ -277,12 +296,15 @@ body.body--scrolled {
     header {
         .header__row:first-child {
             .logo {
-                top: 58px;
+                top: 48px;
                 h1 {
                     a {
                         font-size: #{$baseFontSize + 5.8}rem;
                         line-height: #{$baseFontSize + 6.2}rem;
                     }
+                }
+                h2 {
+                    font-size: #{$baseFontSize + 0.6}rem;
                 }
             }
         }
