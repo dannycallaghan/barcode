@@ -33,7 +33,8 @@
         <!-- CSS -->
         <link rel="stylesheet" href="/css/style.min.css">
     </head>
-    <body>
+    <body class="splash-1 splash-2">
+    <!-- <body> -->
 
     <!-- Skip link - activated on 'tab' -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -46,6 +47,7 @@
             <!-- Logo -->
             <div class="logo">
                 <h1><a href="/"><span>o</span>BarCode<span>p</span></a></h1>
+                <h2>The Mixologist's Magazine</h2>
             </div>
 
             <!-- Mobile nav drawer button -->
@@ -94,7 +96,7 @@
 
     <!-- Main content -->
     <main>
-        <section class="splash-video-wrapper">
+        <section class="video-wrapper">
             <!-- Homepage video -->
             <video autoplay loop muted poster="/images/poster-large-2x.jpg">
                 <source src="/video/cocktail-x-sm.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
@@ -103,12 +105,18 @@
                 <p>Sorry, your browser doesn't support embedded videos.</p>
             </video>
         </section>
+        <div id="splash-screen" class="splash">
+            <div class="splash__text">We're glad</div>
+            <div class="splash__text">you're here.</div>
+            <div class="splash__text">It's your round ...</div>
+            <div class="splash__button">
+                <button id="splash-news" class="button" type="button">News</button>
+            </div>
+            <div class="splash__button">
+                <button id="splash-random" class="button" type="button">Random Recipe</button>
+            </div>
+        </div>
     </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent mattis leo nec neque venenatis aliquet. Nullam eget semper purus, non consectetur metus. Proin convallis felis sed tincidunt consequat. Nullam massa lectus, porta ut lobortis id, aliquam eu metus. Nam eu risus ut sapien dignissim iaculis. Maecenas eu molestie ex. Integer feugiat sem quis quam sollicitudin lobortis. Nam malesuada urna dolor, quis aliquet eros auctor ac. Duis id suscipit libero, vitae fringilla enim. Nulla pharetra, arcu vitae fermentum posuere, eros nibh accumsan nunc, vitae dapibus elit justo vitae justo. Vestibulum eu libero sed erat dictum pharetra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque odio arcu, malesuada efficitur tempus sed, sagittis convallis purus.</p>
-    </footer>
 
     <!-- Adds a cloak to the content when the mobile drawer is open -->
     <div id="cloak"></div>
