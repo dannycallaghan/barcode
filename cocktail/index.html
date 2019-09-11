@@ -2,138 +2,161 @@
 <html lang="en">
     <head>
 	    <meta charset="utf-8" />
-	    <title>TITLE</title>
+	    <title>Bar Code</title>
     	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	    <meta name="description" content="" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <!-- Web app metadata and icons -->
+        <meta name="theme-color" content="#F2F2B3">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="application-name" content="Bar Code">
+        <link rel="shortcut icon" href="/favicon.ico" sizes="48x48">
+        <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/images/icons//apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/images/icons//apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/images/icons//apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/images/icons//apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/images/icons//apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/images/icons//apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/images/icons//apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/icons//apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="/images/icons//android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/icons//favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/images/icons//favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/icons//favicon-16x16.png">
+        <link rel="manifest" href="/manifest.json">
+        <meta name="msapplication-TileColor" content="#F2F2B3">
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+        <meta name="theme-color" content="#F2F2B3">
+        <!-- Prefetch The Cocktail DB-->
+        <link rel="dns-prefetch" href="https://www.thecocktaildb.com">
+        <!-- CSS -->
         <link rel="stylesheet" href="/css/style.min.css">
     </head>
-    <body class="body-scrolled">;
-        
-        <a href="#main-content" class="skip-link">Skip to main content</a>
+    <body>
 
-        <header name="top">
+    <!-- Skip link - activated on 'tab' -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-            <div class="header__row">
+    <!-- Header -->
+    <header name="top">
 
-                <div class="logo">
-                    <h1><a href="/"><span>o</span>BarCode<span>p</span></a></h1>
-                </div>
+        <div class="header__row">
 
-                <button type="button" class="toggle-drawer">
-                    <i class="material-icons">menu</i>
-                </button>
-                
-                <nav>
-                    <ul class="menu">
-                        <li><a href="/news/" title="News"><span>&#10033;</span>News</a></li>
-                        <li><a href="/cocktail/?id=random" title="Random" class="active"><span>&#10033;</span>Random</a></li>
-                        <li><a href="/popular/?list=popular" title="Popular"><span>&#10033;</span>Popular</a></li>
-                        <li><a href="/ingredient/" title="Base"><span>&#10033;</span>Base</a></li>
-                        <li><a href="/virgin/?list=virgin" title="Home"><span>&#10033;</span>Virgin</a></li>
-                    </ul>
-                </nav>
-
+            <!-- Logo -->
+            <div class="logo">
+                <h1><a href="/"><span>o</span>BarCode<span>p</span></a></h1>
             </div>
 
-            <div class="header__row">
-            </div>
-            
-        </header>
-
-        <div class="drawer" aria-hidden="true">
+            <!-- Mobile nav drawer button -->
             <button type="button" class="toggle-drawer">
-                <i class="material-icons">close</i>
+                <i class="material-icons">menu</i>
             </button>
-
+            
+            <!-- Top navigation -->
             <nav>
                 <ul class="menu">
-                    <li><a href="/" title="Home"><span>&#10033;</span>Home</a></li>
-                    <li><a href="/cocktail/?id=random" title="Home" class="active"><span>&#10033;</span>Today's Pick</a></li>
-                    <li><a href="/popular/?list=popular" title="Home"><span>&#10033;</span>Popular</a></li>
-                    <li><a href="/ingredient/" title="Home"><span>&#10033;</span>By Ingredient</a></li>
-                    <li><a href="/virgin/?list=virgin" title="Home"><span>&#10033;</span>Virgin</a></li>
+                    <li><a href="/news/" title="News"><i class="material-icons">chrome_reader_mode</i>News</a></li>
+                    <li><a href="/cocktail/?id=random" title="Random" class="active"><i class="material-icons">help_outline</i>Random</a></li>
+                    <li><a href="/popular/?list=popular" title="Popular"><i class="material-icons">stars</i>Popular</a></li>
+                    <li><a href="/ingredient/" title="Base"><i class="material-icons">local_drink</i>Base</a></li>
+                    <li><a href="/virgin/?list=virgin" title="Virgin"><i class="material-icons">drive_eta</i>Virgin</a></li>
                 </ul>
             </nav>
-        </div>
-
-        
-
-
-        <!-- Logo -->
-        
-
-        <!-- 
-            <ul>
-            <li><a href="/" title="Home">Home</a></li>
-            <li><a href="/cocktail/?id=random" title="Home">Cocktail Of The Day</a></li>
-            <li><a href="/popular/?list=popular" title="Home">Popular</a></li>
-            <li><a href="/ingredient/" title="Home">By Ingredient</a></li>
-            <li><a href="/virgin/?list=virgin" title="Home">Virgin</a></li>
-            <li><a href="/contact/" title="Contact">Contact</a></li>
-        </ul> -->
-
-        <!-- <h1>Cocktail Details?????</h1>
-
-        <main id="category-cocktail">
-
-            <section id="cocktail-data"></div>
-
-        </main> -->
-
-        
-
-        <div id="splash"></div>
-
-
-        <div class="content">
-
-            <div>
-            
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et efficitur enim. Quisque venenatis consectetur elementum. In bibendum nulla eu rhoncus tincidunt. Nam lorem ante, tincidunt a magna non, elementum faucibus magna. Duis hendrerit quam purus, eget ornare enim dapibus non. Phasellus vestibulum libero eu ipsum dignissim, id dapibus risus mollis. Pellentesque eros lectus, aliquet sit amet consectetur consequat, vehicula sed erat. Aliquam rhoncus nibh eget ante volutpat, quis cursus tellus condimentum. Suspendisse pharetra interdum tellus, in imperdiet sapien malesuada et. Pellentesque eu consectetur urna, eu tristique velit. Praesent turpis ligula, bibendum ut porta sed, interdum et lacus. Etiam fermentum neque et diam egestas, id ultricies augue laoreet. Cras sed lectus non enim tempor eleifend. Morbi ornare mollis eleifend.</p>
-
-                    <p>Aliquam posuere, velit ac tincidunt fringilla, lacus augue pretium lorem, tincidunt tempor felis risus non augue. Sed eros augue, congue vel felis a, sagittis varius magna. Vestibulum interdum facilisis nunc ac molestie. Pellentesque egestas velit in eros consectetur ullamcorper. Vivamus commodo auctor orci, non malesuada augue. Donec elementum ante quis nibh tempus cursus. In vitae enim nec est commodo consectetur eu consectetur quam. Donec pharetra odio velit, non sollicitudin nunc pellentesque interdum. Donec egestas elit quis ultricies suscipit. Aliquam sit amet volutpat orci. Etiam tincidunt lacinia urna, at posuere sapien feugiat eu.</p>
-                    
-                    <p>In hac habitasse platea dictumst. Phasellus felis nisl, consectetur at ligula vel, aliquam iaculis turpis. Nam sodales porta turpis, quis finibus lorem auctor sit amet. Integer eu sodales lacus. Pellentesque molestie, neque vitae imperdiet finibus, sapien augue euismod sapien, eu egestas elit risus et metus. Suspendisse fringilla metus sed mattis rutrum. Ut id nisi velit. Morbi vel vehicula lacus. Vestibulum nisl urna, viverra ac arcu quis, molestie euismod risus.</p>
-                    
-                    <p>Ut volutpat vel justo quis imperdiet. Suspendisse id malesuada leo. Proin sed eros ut tellus tincidunt tristique id a ex. Curabitur maximus, mauris eu euismod eleifend, neque risus fringilla massa, eu interdum erat leo in tellus. Integer eu ligula at lorem ultrices efficitur at vel purus. Praesent facilisis congue eros, vitae sollicitudin purus lacinia eget. Aenean consectetur sollicitudin lorem, id pharetra urna mollis a. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras turpis sem, dignissim at augue congue, porttitor cursus mi.</p>
-                    
-                    <p>Fusce laoreet consectetur elit, nec lobortis nisi dictum sed. Vestibulum varius efficitur dignissim. Sed rhoncus pellentesque mollis. Nulla non purus ut orci bibendum mollis. Aliquam tincidunt ullamcorper nisl ut auctor. Etiam nec mauris at ligula pharetra molestie in sed ex. Pellentesque orci felis, tincidunt et interdum eu, tristique a velit. Suspendisse potenti. Vivamus ac varius mi. Nunc id nibh lacus. Nunc laoreet semper lacus et suscipit. Integer a ex arcu. Proin pulvinar dapibus dictum. Quisque arcu urna, aliquam vitae pellentesque non, efficitur non nisl. Cras molestie vehicula lectus eget ultricies.</p>
-            
-            </div>
 
         </div>
 
-        <footer class="footer"></footer>
+        <!-- Breadcrumbs -->
+        <div class="header__row">
+        </div>
+        
+    </header>
 
-        <div id="cloak"></div>
+    <!-- Mobile nav drawer -->
+    <div class="drawer" aria-hidden="true">
 
-        <script src="/js/main.min.js"></script>
+        <!-- Closes the mobile nav drawer-->
+        <button type="button" class="toggle-drawer">
+            <i class="material-icons">close</i>
+        </button>
 
-        <script id="cocktail_details" type="text/html">
-            <% if (data.drinks.length) { %>
-                <h1><%= data.drinks[0].strDrink %></h1>
-                <p><img style="width: 200px;" src="<%= data.drinks[0].strDrinkThumb %>" alt="<%= data.drinks[0].strDrink %>"></p>
-                <ul>
-                    <li>Category: <%= data.drinks[0].strCategory %></li>
-                    <li>Type: <%= data.drinks[0].strAlcoholic %></li>
-                    <li>Glass: <%= data.drinks[0].strGlass %></li>
+        <!-- Mobile nav -->
+        <nav>
+            <ul class="menu">
+                <li><a href="/news/" title="News"><i class="material-icons">chrome_reader_mode</i>News</a></li>
+                <li><a href="/cocktail/?id=random" title="Random" class="active"><i class="material-icons">help_outline</i>Random</a></li>
+                <li><a href="/popular/?list=popular" title="Popular"><i class="material-icons">stars</i>Popular</a></li>
+                <li><a href="/ingredient/" title="Base"><i class="material-icons">local_drink</i>Base</a></li>
+                <li><a href="/virgin/?list=virgin" title="Virgin"><i class="material-icons">drive_eta</i>Virgin</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main content -->
+    <main class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent mattis leo nec neque venenatis aliquet. Nullam eget semper purus, non consectetur metus. Proin convallis felis sed tincidunt consequat. Nullam massa lectus, porta ut lobortis id, aliquam eu metus. Nam eu risus ut sapien dignissim iaculis. Maecenas eu molestie ex. Integer feugiat sem quis quam sollicitudin lobortis. Nam malesuada urna dolor, quis aliquet eros auctor ac. Duis id suscipit libero, vitae fringilla enim. Nulla pharetra, arcu vitae fermentum posuere, eros nibh accumsan nunc, vitae dapibus elit justo vitae justo. Vestibulum eu libero sed erat dictum pharetra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque odio arcu, malesuada efficitur tempus sed, sagittis convallis purus.</p>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="footer__row">
+            <div class="col">&copy; 2019 Bar Club. All rights reserved.</div>
+            <div class="col"><a href="#" id="back-to-top">Back to top <i class="material-icons">arrow_upward</i></a></div>
+        </div>
+
+        <div class="footer__row">
+            <div class="col">
+                <ul class="menu">
+                    <li><a href="/" title="Home">Home</a></li>
+                    <li><a href="/news/" title="News">News</a></li>
+                    <li><a href="/cocktail/?id=random" title="Random">Random</a></li>
+                    <li><a href="/popular/?list=popular" title="Popular">Popular</a></li>
+                    <li><a href="/ingredient/" title="Base">Base</a></li>
+                    <li><a href="/virgin/?list=virgin" title="Virgin">Virgin</a></li>
+                    <li><a href="/contact/" title="Contact">Contact</a></li>
                 </ul>
-                <% if (data.drinks[0]['strIngredient1'].length) { %>
-                    <h6>Ingredients:</h6>
-                    <ul>
-                        <% for (var i = 1; i < 100; i++) { %>
-                            <% if (data.drinks[0]['strIngredient' + i].length) { %>
-                                <li><%= data.drinks[0]['strIngredient' + i] %><%= data.drinks[0]['strMeasure' + i].length && !data.drinks[0]['strMeasure' + i].match(/\\n/) ? ' - ' + data.drinks[0]['strMeasure' + i] : ''  %></li>
-                            <% } else { break; } %>
-                        <% } %>
-                    </ul>
-                <% } %>
-                <p><%= data.drinks[0].strInstructions %></p>
-            <% } else { %>
-                <p>Unable to retrieve data. Please try again later.</p>
+            </div>
+            <div class="col">
+                <p>Recipes are taken from the open, crowd-sourced database of drinks and cocktails at <a href="https://www.thecocktaildb.com/" target="_blank" title="Visit The CocktailDB (opens in a new window)">The CocktailDB</a>.</p>
+                <ul class="menu social-icons">
+                    <li><a href="https://twitter.com/dannycallaghan" title="Twitter"><img src="/images/twitter.svg" alt="Twitter"></a></li>
+                    <li><a href="https://www.linkedin.com/in/dannycallaghan/" title="Linkedin"><img src="/images/linkedin.svg" alt="Linkedin"></a></li>
+                </ul>
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- Adds a cloak to the content when the mobile drawer is open -->
+    <div id="cloak"></div>
+
+    <script src="/js/main.min.js"></script>
+
+    <script id="cocktail_details" type="text/html">
+        <% if (data.drinks.length) { %>
+            <h1><%= data.drinks[0].strDrink %></h1>
+            <p><img style="width: 200px;" src="<%= data.drinks[0].strDrinkThumb %>" alt="<%= data.drinks[0].strDrink %>"></p>
+            <ul>
+                <li>Category: <%= data.drinks[0].strCategory %></li>
+                <li>Type: <%= data.drinks[0].strAlcoholic %></li>
+                <li>Glass: <%= data.drinks[0].strGlass %></li>
+            </ul>
+            <% if (data.drinks[0]['strIngredient1'].length) { %>
+                <h6>Ingredients:</h6>
+                <ul>
+                    <% for (var i = 1; i < 100; i++) { %>
+                        <% if (data.drinks[0]['strIngredient' + i].length) { %>
+                            <li><%= data.drinks[0]['strIngredient' + i] %><%= data.drinks[0]['strMeasure' + i].length && !data.drinks[0]['strMeasure' + i].match(/\\n/) ? ' - ' + data.drinks[0]['strMeasure' + i] : ''  %></li>
+                        <% } else { break; } %>
+                    <% } %>
+                </ul>
             <% } %>
-        </script>
+            <p><%= data.drinks[0].strInstructions %></p>
+        <% } else { %>
+            <p>Unable to retrieve data. Please try again later.</p>
+        <% } %>
+    </script>
         
     </body>
 </html>
