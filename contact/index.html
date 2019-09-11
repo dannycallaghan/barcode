@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	    <meta charset="utf-8" />
+	    <title>TITLE</title>
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	    <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+    </head>
+    <body>
+
+        <ul>
+            <li><a href="/" title="Home">Home</a></li>
+            <li><a href="/cocktail/?id=random" title="Home">Cocktail Of The Day</a></li>
+            <li><a href="/popular/?list=popular" title="Home">Popular</a></li>
+            <li><a href="/ingredient/" title="Home">By Ingredient</a></li>
+            <li><a href="/virgin/?list=virgin" title="Home">Virgin</a></li>
+            <li><a href="/contact/" title="Contact" class="active">Contact</a></li>
+        </ul>
+
+        <h1>Contact</h1>
+
+        <form name="contact-form" action="mailto:dannycallaghan+uniwebproject@gmail.com?subject=University Web Development Final Project Contact Form" method="post" enctype="text/plain">
+            <div class="form__element_wrapper">
+                <label for="contact-name">Your name <span>*</span></label>
+                <input type="text" id="contact-name" name="contact-name">
+            </div>
+            <div class="form__element_wrapper">
+                <label for="contact-email">Your email address <span>*</span></label>
+                <input type="text" id="contact-email" name="contact-email">
+            </div>
+            <div class="form__element_wrapper">
+                <label for="contact-message">Your message <span>*</span></label>
+                <textarea id="contact-message" name="contact-message"></textarea>
+            </div>
+            <div class="form__buttons">
+                <button id="contact-send" type="button">Send</button>
+                <button id="contact-clear" type="button">Clear</button>
+            </div>
+        </form>
+        
+    </body>
+</html>

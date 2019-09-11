@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	    <meta charset="utf-8" />
+	    <title>TITLE</title>
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	    <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+    </head>
+    <body>
+
+        <ul>
+            <li><a href="/" title="Home">Home</a></li>
+            <li><a href="/cocktail/?id=random" title="Home">Cocktail Of The Day</a></li>
+            <li><a href="/popular/?list=popular" title="Home" class="active">Popular</a></li>
+            <li><a href="/ingredient/" title="Home">By Ingredient</a></li>
+            <li><a href="/virgin/?list=virgin" title="Home">Virgin</a></li>
+            <li><a href="/contact/" title="Contact">Contact</a></li>
+        </ul>
+
+        <h1>Popular</h1>
+
+        <main id="category-list">
+
+            <section id="cocktail-data"></div>
+
+        </main>
+
+        <script src="/js/main.min.js"></script>
+
+        <script id="cocktails_list" type="text/html">
+            <% if (data.length) { %>
+                <% for (var i = 0, x = data.length; i < x; i++) { %>
+                    <h1><a href="/cocktail/?id=<%= data[i].drinks[0].idDrink %>"><%= data[i].drinks[0].strDrink %></a></h1>
+                    <p><img style="width: 200px;" src="<%= data[i].drinks[0].strDrinkThumb %>" alt="<%= data[i].drinks[0].strDrink %>"></p>
+                    <ul>
+                        <li>Category: <%= data[i].drinks[0].strCategory %></li>
+                        <li>Type: <%= data[i].drinks[0].strAlcoholic %></li>
+                    </ul>
+                    <% if (data[i].drinks[0]['strIngredient1'].length) { %>
+                        <h6>Ingredients:</h6>
+                        <ul>
+                            <% for (var x = 1; x < 100; x++) { %>
+                                <% if (data[i].drinks[0]['strIngredient' + x].length) { %>
+                                    <li><%= data[i].drinks[0]['strIngredient' + x] %></li>
+                                <% } else { break; } %>
+                            <% } %>
+                        </ul>
+                    <% } %>
+                <% } %>  
+            <% } else { %>
+                <p>Unable to retrieve data. Please try again later.</p>
+            <% } %>
+        </script>
+        
+    </body>
+</html>

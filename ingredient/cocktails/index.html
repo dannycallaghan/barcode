@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	    <meta charset="utf-8" />
+	    <title>TITLE</title>
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	    <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+    </head>
+    <body>
+
+        <ul>
+            <li><a href="/" title="Home">Home</a></li>
+            <li><a href="/cocktail/?id=random" title="Home">Cocktail Of The Day</a></li>
+            <li><a href="/popular/?list=popular" title="Home">Popular</a></li>
+            <li><a href="/ingredient/" title="Home">By Ingredient</a></li>
+            <li><a href="/virgin/?list=virgin" title="Home">Virgin</a></li>
+            <li><a href="/contact/" title="Contact">Contact</a></li>
+        </ul>
+
+        <h1>Popular</h1>
+
+        <main id="category-list">
+
+            <section id="cocktail-data"></div>
+
+        </main>
+
+        <script src="/js/main.min.js"></script>
+
+        <script id="cocktails_list" type="text/html">
+            <% if (data.drinks.length) { %>
+                <% for (var i = 0, x = data.drinks.length; i < x; i++) { %>
+                    <h1><a href="/cocktail/?id=<%= data.drinks[i].idDrink %>"><%= data.drinks[i].strDrink %></a></h1>
+                    <p><img style="width: 200px;" src="<%= data.drinks[i].strDrinkThumb %>" alt="<%= data.drinks[i].strDrink %>"></p>
+                <% } %>  
+            <% } else { %>
+                <p>Unable to retrieve data. Please try again later.</p>
+            <% } %>
+        </script>
+        
+    </body>
+</html>
