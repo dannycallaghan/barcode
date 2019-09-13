@@ -10,29 +10,83 @@ html {
   height: 100%; }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial;
+  font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial;
   color: #293241;
-  background-color: #F2F2B3;
   margin: 0;
   height: 100%;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-      flex-direction: column; }
+      flex-direction: column;
+  background: #F2F2B3 url(/images/bg.png) 0 0 repeat; }
 
 main {
   -ms-flex: 1 0 auto;
       flex: 1 0 auto;
   position: relative;
   z-index: 2; }
-  main section.cocktail-details {
-    background-color: #F2F2B3;
-    margin: 240px auto 32px auto;
-    width: 90%;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); }
-    main section.cocktail-details.cocktail-details {
-      margin-bottom: 132px;
-      padding: 32px; }
+
+.cocktail-base {
+  margin: calc(208px + 16px) auto 16px auto;
+  width: calc(100% - 16px); }
+  .cocktail-base .cocktail-base__list-row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column; }
+    .cocktail-base .cocktail-base__list-row .cocktail-base__list-item {
+      width: 100%;
+      background-color: #F2F2B3;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+      margin-bottom: 8px;
+      background-position: center center;
+      background-repeat: no-repeat;
+      max-height: 300px;
+      text-align: center;
+      border: solid 2px #98C1D9;
+      background-color: #3D5A80;
+      position: relative;
+      overflow: hidden; }
+      .cocktail-base .cocktail-base__list-row .cocktail-base__list-item.blank {
+        background-color: transparent;
+        border: none;
+        box-shadow: none; }
+      .cocktail-base .cocktail-base__list-row .cocktail-base__list-item img {
+        position: relative;
+        margin: 0 auto;
+        width: 100%;
+        opacity: 0.2;
+        z-index: 1; }
+      .cocktail-base .cocktail-base__list-row .cocktail-base__list-item a.cocktail-base__list-item-title {
+        position: absolute;
+        z-index: 2;
+        left: 0;
+        top: 40%;
+        background-color: #98C1D9;
+        padding: 16px;
+        text-align: center;
+        display: block;
+        text-decoration: none;
+        font-size: 3rem;
+        line-height: 3rem;
+        color: #293241;
+        width: 100%;
+        text-transform: uppercase; }
+        .cocktail-base .cocktail-base__list-row .cocktail-base__list-item a.cocktail-base__list-item-title:hover {
+          background-color: #EE6C4D;
+          color: #fff; }
+      .cocktail-base .cocktail-base__list-row .cocktail-base__list-item:last-child {
+        margin-right: 0; }
+
+@media (min-width: 766px) {
+  .cocktail-base {
+    margin: calc(208px + 32px) auto 32px auto;
+    width: calc(100% - 64px); }
+    .cocktail-base .cocktail-base__list-row {
+      -ms-flex-direction: row;
+          flex-direction: row; }
+      .cocktail-base .cocktail-base__list-row .cocktail-base__list-item {
+        margin: 0 32px 32px 0; } }
 
 .button {
   background: #ccc;
@@ -59,6 +113,154 @@ main {
   text-decoration: none; }
   .button:active {
     box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2); }
+  .button.cocktail-list-button {
+    background: #75B27C;
+    color: #fff; }
+
+.cocktail-details {
+  background-color: #F2F2B3;
+  margin: calc(208px + 16px) auto 16px auto;
+  width: calc(100% - 16px);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); }
+  .cocktail-details .cocktail-data {
+    padding: 0 8px 8px 8px; }
+    .cocktail-details .cocktail-data h2 {
+      transition: 0.5s;
+      font-size: 1.6rem;
+      line-height: 2rem;
+      margin: 4px 0 16px 0;
+      text-transform: uppercase;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+      .cocktail-details .cocktail-data h2 a {
+        transition: all 0.5s;
+        color: #293241;
+        text-decoration: none; }
+        .cocktail-details .cocktail-data h2 a span {
+          transition: all 0.5s;
+          display: none; }
+        .cocktail-details .cocktail-data h2 a:hover {
+          color: #EE6C4D; }
+    .cocktail-details .cocktail-data h3 {
+      font-size: 1.3rem;
+      line-height: 1.8rem;
+      margin: 4px 0 16px 0;
+      text-transform: uppercase;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+    .cocktail-details .cocktail-data p {
+      font-size: 1.2rem;
+      line-height: 2rem;
+      margin: 0 0 8px 0; }
+    .cocktail-details .cocktail-data .cocktail-data__row {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+      .cocktail-details .cocktail-data .cocktail-data__row .cocktail-data__item {
+        margin: 0 0 8px 0; }
+        .cocktail-details .cocktail-data .cocktail-data__row .cocktail-data__item img {
+          width: 100%;
+          border: solid 1px #EE6C4D; }
+        .cocktail-details .cocktail-data .cocktail-data__row .cocktail-data__item a:hover img {
+          border-color: #3D5A80; }
+        .cocktail-details .cocktail-data .cocktail-data__row .cocktail-data__item ul {
+          list-style: none;
+          margin: 0;
+          padding: 0; }
+          .cocktail-details .cocktail-data .cocktail-data__row .cocktail-data__item ul li {
+            font-size: 1.2rem;
+            line-height: 2rem;
+            padding-left: 30px;
+            text-indent: -16px;
+            margin: 0 0 8px 0; }
+            .cocktail-details .cocktail-data .cocktail-data__row .cocktail-data__item ul li i {
+              position: relative;
+              top: 6px;
+              padding-right: 8px; }
+            .cocktail-details .cocktail-data .cocktail-data__row .cocktail-data__item ul li span {
+              color: #75B27C; }
+
+.category-list .cocktail-details {
+  background-color: transparent;
+  box-shadow: none; }
+  .category-list .cocktail-details .cocktail-details__cocktail {
+    background-color: #F2F2B3;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    padding: 16px 8px 8px 8px;
+    margin: 0 0 16px 0; }
+    .category-list .cocktail-details .cocktail-details__cocktail button {
+      margin: 0 auto 8px auto;
+      display: block; }
+
+@media (min-width: 400px) {
+  .cocktail-details .cocktail-data h2 {
+    font-size: 2.4rem;
+    line-height: 2.8rem; } }
+
+@media (min-width: 540px) {
+  .cocktail-details .cocktail-data h2 {
+    font-size: 3rem;
+    line-height: 3.4rem; } }
+
+@media (min-width: 640px) {
+  .cocktail-details .cocktail-data h2 {
+    font-size: 3rem;
+    line-height: 3.4rem; } }
+
+@media (min-width: 766px) {
+  .cocktail-details {
+    margin: calc(208px + 32px) auto 32px auto;
+    width: calc(100% - 64px); }
+    .cocktail-details .cocktail-data {
+      padding: 0 32px 32px 32px; }
+      .cocktail-details .cocktail-data h2 {
+        margin: 4px 0 16px 0; }
+      .cocktail-details .cocktail-data h3 {
+        font-size: 1.3rem;
+        line-height: 1.8rem;
+        margin: 4px 0 16px 0; }
+      .cocktail-details .cocktail-data p {
+        font-size: 1.2rem;
+        line-height: 2rem;
+        margin: 0 0 8px 0; }
+      .cocktail-details .cocktail-data .cocktail-data__row {
+        -ms-flex-direction: row;
+            flex-direction: row; }
+        .cocktail-details .cocktail-data .cocktail-data__row .cocktail-data__item {
+          margin: 0 16px 16px 0;
+          -ms-flex-positive: 1;
+              flex-grow: 1; }
+          .cocktail-details .cocktail-data .cocktail-data__row .cocktail-data__item:first-child {
+            -ms-flex-positive: 0;
+                flex-grow: 0; }
+          .cocktail-details .cocktail-data .cocktail-data__row .cocktail-data__item:last-child {
+            margin-right: 0; }
+          .cocktail-details .cocktail-data .cocktail-data__row .cocktail-data__item img {
+            max-width: 280px; }
+  .category-list .cocktail-details .cocktail-details__cocktail {
+    padding: 24px 32px 32px 32px;
+    overflow: auto;
+    margin: 0 0 32px 0; }
+    .category-list .cocktail-details .cocktail-details__cocktail h2 {
+      text-align: left; }
+      .category-list .cocktail-details .cocktail-details__cocktail h2 a span {
+        color: #EE6C4D;
+        display: inline-block;
+        font-family: 'Beradon Frames'; }
+      .category-list .cocktail-details .cocktail-details__cocktail h2 a:hover span {
+        color: #293241; }
+    .category-list .cocktail-details .cocktail-details__cocktail button {
+      float: right;
+      margin: 0;
+      display: block; } }
+
+@media (min-width: 920px) {
+  .cocktail-details .cocktail-data h2 {
+    margin: 4px 0 32px 0; } }
 
 body .toggle-drawer {
   padding: 12px;
@@ -151,12 +353,12 @@ body.body--drawer-visible #cloak {
 
 .frames {
   font-family: 'Beradon Frames';
-  text-align: center; }
+  text-align: center;
+  padding-top: 32px; }
   .frames.frames--large {
-    font-size: 20rem;
-    line-height: 9rem;
-    color: #EE6C4D;
-    margin-bottom: -9rem; }
+    font-size: 8rem;
+    line-height: 2rem;
+    color: #EE6C4D; }
 
 @font-face {
   font-family: 'Beradon Script';
@@ -209,7 +411,9 @@ body.body--drawer-visible #cloak {
           text-decoration: underline; }
       .footer .footer__row ul.menu.social-icons {
         display: -ms-flexbox;
-        display: flex; }
+        display: flex;
+        -ms-flex-pack: end;
+            justify-content: flex-end; }
         .footer .footer__row ul.menu.social-icons li {
           margin-right: 16px; }
           .footer .footer__row ul.menu.social-icons li:last-child {
@@ -240,6 +444,8 @@ body.body--drawer-visible #cloak {
     .footer .footer__row:first-child div:last-child {
       -ms-flex-order: 2;
           order: 2;
+      text-align: right; }
+    .footer .footer__row p {
       text-align: right; } }
 
 .material-icons {
@@ -276,14 +482,14 @@ header {
         header .header__row:first-child .logo h1 {
           margin: 60px auto 0 auto; }
           header .header__row:first-child .logo h1 a {
-            font-family: "Beradon Script", "Helvetica Neue", Helvetica, Arial;
+            font-family: "Beradon Script", "Roboto Condensed", "Helvetica Neue", Helvetica, Arial;
             text-decoration: none;
             font-size: 4.4rem;
             line-height: 5rem;
             color: #293241;
             transition: 0.5s; }
             header .header__row:first-child .logo h1 a span {
-              font-family: "Beradon Frames", "Helvetica Neue", Helvetica, Arial;
+              font-family: "Beradon Frames", "Roboto Condensed", "Helvetica Neue", Helvetica, Arial;
               color: #EE6C4D; }
             header .header__row:first-child .logo h1 a:hover {
               color: #EE6C4D; }
