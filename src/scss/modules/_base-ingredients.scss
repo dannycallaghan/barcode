@@ -1,0 +1,80 @@
+.cocktail-base {
+    margin: calc(208px + 16px) auto 16px auto;
+    width: calc(100% - 16px);
+
+    .cocktail-base__list-row {
+        display: flex;
+        flex-direction: column;
+
+        .cocktail-base__list-item {
+            width: 100%;
+            background-color: $pale;
+            box-shadow: $boxShadow;
+            margin-bottom: 8px;
+            background-position: center center;
+            background-repeat: no-repeat;
+            max-height: 300px;
+            text-align: center;
+            border: solid 2px $lightBlue;
+            background-color: $darkBlue;
+            position: relative;
+            overflow: hidden;
+
+            &.blank {
+                background-color: transparent;
+                border: none;
+                box-shadow: none;
+            }
+
+            img {
+                position: relative;
+                margin: 0 auto;
+                width: 100%;
+                opacity: 0.2;
+                z-index: 1;
+            }
+
+            a.cocktail-base__list-item-title {
+                position: absolute;
+                z-index: 2;
+                left: 0;
+                top: 40%;
+                background-color: $lightBlue;
+                padding: 16px;
+                text-align: center;
+                display: block;
+                text-decoration: none;
+                font-size: #{$baseFontSize + 2}rem;
+                line-height: #{$baseFontSize + 2}rem;
+                color: $dark;
+                width: 100%;
+                text-transform: uppercase;
+
+                &:hover {
+                    background-color: $orange;
+                    color: #fff;
+                }
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+}
+
+@media(min-width: 766px) {
+    .cocktail-base {
+        margin: calc(208px + 32px) auto 32px auto;
+        width: calc(100% - 64px);
+
+        .cocktail-base__list-row {
+            flex-direction: row;
+            
+            .cocktail-base__list-item {
+                margin: 0 32px 32px 0;
+            }
+        }
+    }
+}

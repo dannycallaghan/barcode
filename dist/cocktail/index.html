@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
 	    <meta charset="utf-8" />
-	    <title>Bar Code</title>
+	    <title>Random | Bar Code</title>
     	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	    <meta name="description" content="" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -60,7 +60,7 @@
                     <li><a href="/news/" title="News"><i class="material-icons">chrome_reader_mode</i>News</a></li>
                     <li><a href="/cocktail/?id=random" title="Random" class="active"><i class="material-icons">help_outline</i>Random</a></li>
                     <li><a href="/popular/?list=popular" title="Popular"><i class="material-icons">stars</i>Popular</a></li>
-                    <li><a href="/ingredient/" title="Base"><i class="material-icons">local_drink</i>Base</a></li>
+                    <li><a href="/base/" title="Base"><i class="material-icons">local_drink</i>Base</a></li>
                     <li><a href="/virgin/?list=virgin" title="Virgin"><i class="material-icons">drive_eta</i>Virgin</a></li>
                 </ul>
             </nav>
@@ -87,7 +87,7 @@
                 <li><a href="/news/" title="News"><i class="material-icons">chrome_reader_mode</i>News</a></li>
                 <li><a href="/cocktail/?id=random" title="Random" class="active"><i class="material-icons">help_outline</i>Random</a></li>
                 <li><a href="/popular/?list=popular" title="Popular"><i class="material-icons">stars</i>Popular</a></li>
-                <li><a href="/ingredient/" title="Base"><i class="material-icons">local_drink</i>Base</a></li>
+                <li><a href="/base/" title="Base"><i class="material-icons">local_drink</i>Base</a></li>
                 <li><a href="/virgin/?list=virgin" title="Virgin"><i class="material-icons">drive_eta</i>Virgin</a></li>
             </ul>
         </nav>
@@ -102,7 +102,7 @@
 
             <div class="frames frames--large">r</div>
 
-            <div id="cocktail-data"></div>
+            <div id="cocktail-data" class="cocktail-data"></div>
 
             <div class="frames frames--large">r</div>
         
@@ -125,7 +125,7 @@
                     <li><a href="/news/" title="News">News</a></li>
                     <li><a href="/cocktail/?id=random" title="Random">Random</a></li>
                     <li><a href="/popular/?list=popular" title="Popular">Popular</a></li>
-                    <li><a href="/ingredient/" title="Base">Base</a></li>
+                    <li><a href="/base/" title="Base">Base</a></li>
                     <li><a href="/virgin/?list=virgin" title="Virgin">Virgin</a></li>
                     <li><a href="/contact/" title="Contact">Contact</a></li>
                 </ul>
@@ -148,23 +148,33 @@
 
     <script id="cocktail_details" type="text/html">
         <% if (data.drinks.length) { %>
-            <h1><%= data.drinks[0].strDrink %></h1>
-            <p><img style="width: 200px;" src="<%= data.drinks[0].strDrinkThumb %>" alt="<%= data.drinks[0].strDrink %>"></p>
-            <ul>
-                <li>Category: <%= data.drinks[0].strCategory %></li>
-                <li>Type: <%= data.drinks[0].strAlcoholic %></li>
-                <li>Glass: <%= data.drinks[0].strGlass %></li>
-            </ul>
-            <% if (data.drinks[0]['strIngredient1'].length) { %>
-                <h6>Ingredients:</h6>
-                <ul>
-                    <% for (var i = 1; i < 100; i++) { %>
-                        <% if (data.drinks[0]['strIngredient' + i].length) { %>
-                            <li><%= data.drinks[0]['strIngredient' + i] %><%= data.drinks[0]['strMeasure' + i].length && !data.drinks[0]['strMeasure' + i].match(/\\n/) ? ' - ' + data.drinks[0]['strMeasure' + i] : ''  %></li>
-                        <% } else { break; } %>
+            <h2><%= data.drinks[0].strDrink %></h2>
+            <div class="cocktail-data__row">
+                <div class="cocktail-data__item">
+                    <img src="<%= data.drinks[0].strDrinkThumb %>" alt="<%= data.drinks[0].strDrink %>">
+                </div>
+                <aside class="cocktail-data__item">
+                    <h3>The Basics:</h3>
+                    <ul>
+                        <li><i class="material-icons">local_bar</i>Category: <%= data.drinks[0].strCategory %></li>
+                        <li><i class="material-icons">local_bar</i>Type: <%= data.drinks[0].strAlcoholic %></li>
+                        <li><i class="material-icons">local_bar</i>Glass: <%= data.drinks[0].strGlass %></li>
+                    </ul>
+                </aside>
+                <div class="cocktail-data__item">
+                    <% if (data.drinks[0]['strIngredient1'].length) { %>
+                    <h3>Ingredients:</h3>
+                    <ul>
+                        <% for (var i = 1; i < 100; i++) { %>
+                            <% if (data.drinks[0]['strIngredient' + i].length) { %>
+                                <li><i class="material-icons">local_bar</i><%= data.drinks[0]['strIngredient' + i] %><%= data.drinks[0]['strMeasure' + i].length && !data.drinks[0]['strMeasure' + i].match(/\\n/) ? ' - ' + data.drinks[0]['strMeasure' + i] : ''  %></li>
+                            <% } else { break; } %>
+                        <% } %>
+                    </ul>
                     <% } %>
-                </ul>
-            <% } %>
+                </div>
+            </div>
+            <h3>Method:</h3> 
             <p><%= data.drinks[0].strInstructions %></p>
         <% } else { %>
             <p>Unable to retrieve data. Please try again later.</p>

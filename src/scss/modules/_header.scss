@@ -44,7 +44,7 @@ header {
                 }
 
                 h2 {
-                    font-family: 'Roboto Condensed', $defaultFontStack;
+                    font-family: $defaultFontStack;
                     font-size: #{$baseFontSize + .1}rem;
                     line-height: #{$baseFontSize + 1}rem;
                     text-transform: uppercase;

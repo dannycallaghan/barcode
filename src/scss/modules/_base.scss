@@ -12,28 +12,15 @@ html {
 body {
     font-family: $defaultFontStack;
     color: $defaultTextColor;
-    background-color: $defaultBackgroundColor;
     margin: 0;
     height: 100%;
     display: flex;
     flex-direction: column;
+    background: $defaultBackgroundColor url(/images/bg.png) 0 0 repeat;
 }
 
 main {
     flex: 1 0 auto;
     position: relative;
     z-index: 2;
-
-    section.cocktail-details {
-        background-color: $pale;
-        margin: 240px auto 32px auto;
-        width: 90%;
-        box-shadow: $boxShadow;
-
-        &.cocktail-details {
-            margin-bottom: 132px;
-            padding: 32px;
-        }
-    }
-
 }

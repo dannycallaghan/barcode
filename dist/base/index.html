@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
 	    <meta charset="utf-8" />
-	    <title>Bar Code</title>
+	    <title>Base | Bar Code</title>
     	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	    <meta name="description" content="" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -33,8 +33,7 @@
         <!-- CSS -->
         <link rel="stylesheet" href="/css/style.min.css">
     </head>
-    <body class="splash-1 splash-2">
-    <!-- <body> -->
+    <body>
 
     <!-- Skip link - activated on 'tab' -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -60,9 +59,9 @@
                 <ul class="menu">
                     <li><a href="/news/" title="News"><i class="material-icons">chrome_reader_mode</i>News</a></li>
                     <li><a href="/cocktail/?id=random" title="Random"><i class="material-icons">help_outline</i>Random</a></li>
-                    <li><a href="/popular/?list=popular" title="Popular"><i class="material-icons">stars</i>Popular</a></li>
+                    <li><a href="/popular/?list=popular" title="Popular" class="active"><i class="material-icons">stars</i>Popular</a></li>
                     <li><a href="/base/" title="Base"><i class="material-icons">local_drink</i>Base</a></li>
-                    <li><a href="/virgin/?list=virgin" title="Home"><i class="material-icons">drive_eta</i>Virgin</a></li>
+                    <li><a href="/virgin/?list=virgin" title="Virgin"><i class="material-icons">drive_eta</i>Virgin</a></li>
                 </ul>
             </nav>
 
@@ -87,42 +86,102 @@
             <ul class="menu">
                 <li><a href="/news/" title="News"><i class="material-icons">chrome_reader_mode</i>News</a></li>
                 <li><a href="/cocktail/?id=random" title="Random"><i class="material-icons">help_outline</i>Random</a></li>
-                <li><a href="/popular/?list=popular" title="Popular"><i class="material-icons">stars</i>Popular</a></li>
+                <li><a href="/popular/?list=popular" title="Popular" class="active"><i class="material-icons">stars</i>Popular</a></li>
                 <li><a href="/base/" title="Base"><i class="material-icons">local_drink</i>Base</a></li>
-                <li><a href="/virgin/?list=virgin" title="Home"><i class="material-icons">drive_eta</i>Virgin</a></li>
+                <li><a href="/virgin/?list=virgin" title="Virgin"><i class="material-icons">drive_eta</i>Virgin</a></li>
             </ul>
         </nav>
     </div>
 
+    <div class="splash"></div>
+
     <!-- Main content -->
-    <main>
-        <section class="video-wrapper">
-            <!-- Homepage video -->
-            <video autoplay loop muted poster="/images/poster-large-2x.jpg">
-                <source src="/video/cocktail-x-sm.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
-                <source src="/video/cocktail-x-sm.webm" type='video/webm; codecs="vp8, vorbis"'>
-                <source src="/video/cocktail-x-sm.ogv" type='video/ogg; codecs="theora, vorbis"'>
-                <p>Sorry, your browser doesn't support embedded videos.</p>
-            </video>
-        </section>
-        <div id="splash-screen" class="splash">
-            <div class="splash__text">We're glad</div>
-            <div class="splash__text">you're here.</div>
-            <div class="splash__text">It's your round ...</div>
-            <div class="splash__button">
-                <button id="splash-news" class="button" type="button">News</button>
+    <main id="category-list" class="category-list content">
+
+        <section class="cocktail-base">
+
+            <div class="cocktail-base__list">
+
+                <div class="cocktail-base__list-row">
+                    
+                    <div class="cocktail-base__list-item">
+                        <a href="/base/cocktails/?list=vodka" class="cocktail-base__list-item-title">Vodka</a>
+                        <a href="/base/cocktails/?list=vodka"><img src="/images/vodka.png" alt="Vodka"></a>
+                    </div>
+
+                    <div class="cocktail-base__list-item">
+                        <a href="/base/cocktails/?list=gin" class="cocktail-base__list-item-title">Gin</a>
+                        <a href="/base/cocktails/?list=gin"><img src="/images/gin.png" alt="Gin"></a>
+                    </div>
+
+                </div>
+
+                <div class="cocktail-base__list-row">
+
+                    <div class="cocktail-base__list-item">
+                        <a href="/base/cocktails/?list=whiskey" class="cocktail-base__list-item-title">Whiskey</a>
+                        <a href="/base/cocktails/?list=whiskey"><img src="/images/whiskey.png" alt="Whiskey"></a>
+                    </div>
+
+                    <div class="cocktail-base__list-item">
+                        <a href="/base/cocktails/?list=rum" class="cocktail-base__list-item-title">Rum</a>
+                        <a href="/base/cocktails/?list=rum"><img src="/images/rum.png" alt="Rum"></a>
+                    </div>
+
+                </div>
+
+                <div class="cocktail-base__list-row">
+
+                    <div class="cocktail-base__list-item">
+                        <a href="/base/cocktails/?list=vodka" class="cocktail-base__list-item-title">Tequila</a>
+                        <a href="/base/cocktails/?list=vodka"><img src="/images/tequila.png" alt="Tequila"></a>
+                    </div>
+
+                    <div class="cocktail-base__list-item blank"></div>
+
+                </div>
+
             </div>
-            <div class="splash__button">
-                <button id="splash-random" class="button" type="button">Random Recipe</button>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="footer__row">
+            <div class="col">&copy; 2019 Bar Club. All rights reserved.</div>
+            <div class="col"><a href="#" id="back-to-top">Back to top <i class="material-icons">arrow_upward</i></a></div>
+        </div>
+
+        <div class="footer__row">
+            <div class="col">
+                <ul class="menu">
+                    <li><a href="/" title="Home">Home</a></li>
+                    <li><a href="/news/" title="News">News</a></li>
+                    <li><a href="/cocktail/?id=random" title="Random">Random</a></li>
+                    <li><a href="/popular/?list=popular" title="Popular">Popular</a></li>
+                    <li><a href="/base/" title="Base">Base</a></li>
+                    <li><a href="/virgin/?list=virgin" title="Virgin">Virgin</a></li>
+                    <li><a href="/contact/" title="Contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <p>Recipes are taken from the open, crowd-sourced database of drinks and cocktails at <a href="https://www.thecocktaildb.com/" target="_blank" title="Visit The CocktailDB (opens in a new window)">The CocktailDB</a>.</p>
+                <ul class="menu social-icons">
+                    <li><a href="https://twitter.com/dannycallaghan" title="Twitter"><img src="/images/twitter.svg" alt="Twitter"></a></li>
+                    <li><a href="https://www.linkedin.com/in/dannycallaghan/" title="Linkedin"><img src="/images/linkedin.svg" alt="Linkedin"></a></li>
+                </ul>
             </div>
         </div>
-    </main>
+
+    </footer>
 
     <!-- Adds a cloak to the content when the mobile drawer is open -->
     <div id="cloak"></div>
 
-    <!-- Our script -->
     <script src="/js/main.min.js"></script>
-        
+
     </body>
 </html>

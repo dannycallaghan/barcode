@@ -1,0 +1,269 @@
+.cocktail-details {
+    background-color: $pale;
+    margin: calc(208px + 16px) auto 16px auto;
+    width: calc(100% - 16px);
+    box-shadow: $boxShadow;
+
+    .cocktail-data {
+        padding: 0 8px 8px 8px;
+
+        h2 {
+            transition: 0.5s;
+            font-size: #{$baseFontSize + 0.6}rem;
+            line-height: #{$baseFontSize + 1}rem;
+            margin: 4px 0 16px 0;
+            text-transform: uppercase;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            a {
+                transition: all 0.5s;
+                color: $dark;
+                text-decoration: none;
+
+                span {
+                    transition: all 0.5s;
+                    display: none;
+                }
+
+                &:hover {
+                    color: $orange;
+                }
+            }
+        }
+
+        h3 {
+            font-size: #{$baseFontSize + 0.3}rem;
+            line-height: #{$baseFontSize + 0.8}rem;
+            margin: 4px 0 16px 0;
+            text-transform: uppercase;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;    
+        }
+
+        p {
+            font-size: #{$baseFontSize + 0.2}rem;
+            line-height: #{$baseFontSize + 1}rem;
+            margin: 0 0 8px 0;
+        }
+
+        .cocktail-data__row {
+            display: flex;
+            flex-direction: column;
+
+            .cocktail-data__item {
+                margin: 0 0 8px 0;
+
+                img {
+                    width: 100%;
+                    border: solid 1px $orange;
+                }
+
+                a {
+                    &:hover {
+                        img {
+                            border-color: $darkBlue;
+                        }
+                    }
+                }
+
+                ul {
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+
+                    li {
+                        font-size: #{$baseFontSize + 0.2}rem;
+                        line-height: #{$baseFontSize + 1}rem;
+                        padding-left: 30px;
+                        text-indent: -16px;
+                        margin: 0 0 8px 0;
+
+                        i {
+                            position: relative;
+                            top: 6px;
+                            padding-right: 8px;
+                        }
+
+                        span {
+                            color: $green;
+                        }
+                    }
+                }
+
+            }
+
+        }
+        
+    }
+
+}
+
+.category-list {
+
+    .cocktail-details {
+        background-color: transparent;
+        box-shadow: none;
+
+        .cocktail-details__cocktail {
+            background-color: $pale;
+            box-shadow: $boxShadow;
+            padding: 16px 8px 8px 8px;
+            margin: 0 0 16px 0;
+
+
+            button {
+                margin: 0 auto 8px auto;
+                display: block;
+            }
+
+        }
+    }
+
+}
+
+@media(min-width: 400px) {
+    .cocktail-details {
+    
+        .cocktail-data {
+    
+            h2 {
+                font-size: #{$baseFontSize + 1.4}rem;
+                line-height: #{$baseFontSize + 1.8}rem;
+            }
+
+        }
+
+    }
+}
+
+@media(min-width: 540px) {
+    .cocktail-details {
+    
+        .cocktail-data {
+    
+            h2 {
+                font-size: #{$baseFontSize + 2}rem;
+                line-height: #{$baseFontSize + 2.4}rem;
+            }
+
+        }
+
+    }
+}
+
+@media(min-width: 640px) {
+    .cocktail-details {
+    
+        .cocktail-data {
+            h2 {
+                font-size: #{$baseFontSize + 2}rem;
+                line-height: #{$baseFontSize + 2.4}rem;
+            }
+
+        }
+
+    }
+}
+
+@media(min-width: 766px) {
+    .cocktail-details {
+        margin: calc(208px + 32px) auto 32px auto;
+        width: calc(100% - 64px);
+    
+        .cocktail-data {
+            padding: 0 32px 32px 32px;
+    
+            h2 {
+                margin: 4px 0 16px 0;
+            }
+    
+            h3 {
+                font-size: #{$baseFontSize + 0.3}rem;
+                line-height: #{$baseFontSize + 0.8}rem;
+                margin: 4px 0 16px 0;
+            }
+    
+            p {
+                font-size: #{$baseFontSize + 0.2}rem;
+                line-height: #{$baseFontSize + 1}rem;
+                margin: 0 0 8px 0;
+            }
+    
+            .cocktail-data__row {
+                flex-direction: row;
+
+                .cocktail-data__item {
+                    margin: 0 16px 16px 0;
+                    flex-grow: 1;
+
+                    &:first-child {
+                        flex-grow: 0;
+                    }
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+
+                    img {
+                        max-width: 280px;
+                    }
+                }
+            }
+        }
+    }
+
+    .category-list {
+
+        .cocktail-details {
+    
+            .cocktail-details__cocktail {
+                padding: 24px 32px 32px 32px;
+                overflow: auto;
+                margin: 0 0 32px 0;
+
+                h2 {
+                    text-align: left;
+                    a {
+                        span {
+                            color: $orange;
+                            display: inline-block;
+                            font-family: 'Beradon Frames';
+                        }
+                        &:hover {
+                            span {
+                                color: $dark;
+                            }
+                        }
+                    }
+                }
+    
+                button {
+                    float: right;
+                    margin: 0;
+                    display: block;
+                }
+    
+            }
+        }
+    
+    }
+}
+
+@media(min-width: 920px) {
+    .cocktail-details {
+    
+        .cocktail-data {
+    
+            h2 {
+                margin: 4px 0 32px 0;
+            }
+
+        }
+
+    }
+
+}

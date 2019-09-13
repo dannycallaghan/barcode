@@ -24,7 +24,7 @@ header {
                 &:nth-child(5) { a { background-color: $dark; border-color: $dark; &:hover, &.active { border-color: $lightBlue; } } }
 
                 a {
-                    font-family: 'Roboto Condensed', $defaultFontStack;
+                    font-family: $defaultFontStack;
                     text-align: center;
                     color: #fff;
                     display: block;

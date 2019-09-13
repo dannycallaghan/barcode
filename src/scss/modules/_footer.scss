@@ -6,7 +6,6 @@
     color: #fff;
     position: relative;
     z-index: 1;
-    //margin-top: 208px;
 
     .footer__row {
         display: flex;
@@ -46,6 +45,7 @@
 
             &.social-icons {
                 display: flex;
+                justify-content: flex-end;
                 li {
                     margin-right: 16px;
                     &:last-child {
@@ -94,6 +94,9 @@
                     order: 2;
                     text-align: right;
                 }
+            }
+            p {
+                text-align: right;
             }
         }
     }

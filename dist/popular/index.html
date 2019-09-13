@@ -2,56 +2,182 @@
 <html lang="en">
     <head>
 	    <meta charset="utf-8" />
-	    <title>TITLE</title>
+	    <title>Popular | Bar Code</title>
     	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	    <meta name="description" content="" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <!-- Web app metadata and icons -->
+        <meta name="theme-color" content="#F2F2B3">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="application-name" content="Bar Code">
+        <link rel="shortcut icon" href="/favicon.ico" sizes="48x48">
+        <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/images/icons//apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/images/icons//apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/images/icons//apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/images/icons//apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/images/icons//apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/images/icons//apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/images/icons//apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/icons//apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="/images/icons//android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/icons//favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/images/icons//favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/icons//favicon-16x16.png">
+        <link rel="manifest" href="/manifest.json">
+        <meta name="msapplication-TileColor" content="#F2F2B3">
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+        <meta name="theme-color" content="#F2F2B3">
+        <!-- Prefetch The Cocktail DB-->
+        <link rel="dns-prefetch" href="https://www.thecocktaildb.com">
+        <!-- CSS -->
+        <link rel="stylesheet" href="/css/style.min.css">
     </head>
     <body>
 
-        <ul>
-            <li><a href="/" title="Home">Home</a></li>
-            <li><a href="/cocktail/?id=random" title="Home">Cocktail Of The Day</a></li>
-            <li><a href="/popular/?list=popular" title="Home" class="active">Popular</a></li>
-            <li><a href="/ingredient/" title="Home">By Ingredient</a></li>
-            <li><a href="/virgin/?list=virgin" title="Home">Virgin</a></li>
-            <li><a href="/contact/" title="Contact">Contact</a></li>
-        </ul>
+    <!-- Skip link - activated on 'tab' -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-        <h1>Popular</h1>
+    <!-- Header -->
+    <header name="top">
 
-        <main id="category-list">
+        <div class="header__row">
 
-            <section id="cocktail-data"></div>
+            <!-- Logo -->
+            <div class="logo">
+                <h1><a href="/"><span>o</span>BarCode<span>p</span></a></h1>
+                <h2>The Mixologist's Magazine</h2>
+            </div>
 
-        </main>
+            <!-- Mobile nav drawer button -->
+            <button type="button" class="toggle-drawer">
+                <i class="material-icons">menu</i>
+            </button>
+            
+            <!-- Top navigation -->
+            <nav>
+                <ul class="menu">
+                    <li><a href="/news/" title="News"><i class="material-icons">chrome_reader_mode</i>News</a></li>
+                    <li><a href="/cocktail/?id=random" title="Random"><i class="material-icons">help_outline</i>Random</a></li>
+                    <li><a href="/popular/?list=popular" title="Popular" class="active"><i class="material-icons">stars</i>Popular</a></li>
+                    <li><a href="/base/" title="Base"><i class="material-icons">local_drink</i>Base</a></li>
+                    <li><a href="/virgin/?list=virgin" title="Virgin"><i class="material-icons">drive_eta</i>Virgin</a></li>
+                </ul>
+            </nav>
 
-        <script src="/js/main.min.js"></script>
+        </div>
 
-        <script id="cocktails_list" type="text/html">
-            <% if (data.length) { %>
-                <% for (var i = 0, x = data.length; i < x; i++) { %>
-                    <h1><a href="/cocktail/?id=<%= data[i].drinks[0].idDrink %>"><%= data[i].drinks[0].strDrink %></a></h1>
-                    <p><img style="width: 200px;" src="<%= data[i].drinks[0].strDrinkThumb %>" alt="<%= data[i].drinks[0].strDrink %>"></p>
-                    <ul>
-                        <li>Category: <%= data[i].drinks[0].strCategory %></li>
-                        <li>Type: <%= data[i].drinks[0].strAlcoholic %></li>
-                    </ul>
-                    <% if (data[i].drinks[0]['strIngredient1'].length) { %>
-                        <h6>Ingredients:</h6>
-                        <ul>
-                            <% for (var x = 1; x < 100; x++) { %>
-                                <% if (data[i].drinks[0]['strIngredient' + x].length) { %>
-                                    <li><%= data[i].drinks[0]['strIngredient' + x] %></li>
-                                <% } else { break; } %>
+        <!-- Breadcrumbs -->
+        <div class="header__row">
+        </div>
+        
+    </header>
+
+    <!-- Mobile nav drawer -->
+    <div class="drawer" aria-hidden="true">
+
+        <!-- Closes the mobile nav drawer-->
+        <button type="button" class="toggle-drawer">
+            <i class="material-icons">close</i>
+        </button>
+
+        <!-- Mobile nav -->
+        <nav>
+            <ul class="menu">
+                <li><a href="/news/" title="News"><i class="material-icons">chrome_reader_mode</i>News</a></li>
+                <li><a href="/cocktail/?id=random" title="Random"><i class="material-icons">help_outline</i>Random</a></li>
+                <li><a href="/popular/?list=popular" title="Popular" class="active"><i class="material-icons">stars</i>Popular</a></li>
+                <li><a href="/base/" title="Base"><i class="material-icons">local_drink</i>Base</a></li>
+                <li><a href="/virgin/?list=virgin" title="Virgin"><i class="material-icons">drive_eta</i>Virgin</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="splash"></div>
+
+    <!-- Main content -->
+    <main id="category-list" class="category-list content">
+
+        <section class="cocktail-details">
+
+            <div id="cocktail-data" class="cocktail-data"></div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="footer__row">
+            <div class="col">&copy; 2019 Bar Club. All rights reserved.</div>
+            <div class="col"><a href="#" id="back-to-top">Back to top <i class="material-icons">arrow_upward</i></a></div>
+        </div>
+
+        <div class="footer__row">
+            <div class="col">
+                <ul class="menu">
+                    <li><a href="/" title="Home">Home</a></li>
+                    <li><a href="/news/" title="News">News</a></li>
+                    <li><a href="/cocktail/?id=random" title="Random">Random</a></li>
+                    <li><a href="/popular/?list=popular" title="Popular">Popular</a></li>
+                    <li><a href="/base/" title="Base">Base</a></li>
+                    <li><a href="/virgin/?list=virgin" title="Virgin">Virgin</a></li>
+                    <li><a href="/contact/" title="Contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <p>Recipes are taken from the open, crowd-sourced database of drinks and cocktails at <a href="https://www.thecocktaildb.com/" target="_blank" title="Visit The CocktailDB (opens in a new window)">The CocktailDB</a>.</p>
+                <ul class="menu social-icons">
+                    <li><a href="https://twitter.com/dannycallaghan" title="Twitter"><img src="/images/twitter.svg" alt="Twitter"></a></li>
+                    <li><a href="https://www.linkedin.com/in/dannycallaghan/" title="Linkedin"><img src="/images/linkedin.svg" alt="Linkedin"></a></li>
+                </ul>
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- Adds a cloak to the content when the mobile drawer is open -->
+    <div id="cloak"></div>
+
+    <script src="/js/main.min.js"></script>
+
+    <script id="cocktails_list" type="text/html">
+        <% if (data.length) { %>
+            <% for (var i = 0, x = data.length; i < x; i++) { %>
+                <div class="cocktail-details__cocktail"> 
+                    <h2><a href="/cocktail/?id=<%= data[i].drinks[0].idDrink %>" title="View details"><%= data[i].drinks[0].strDrink %><span>p</span></a></h2>
+                    <div class="cocktail-data__row">
+                        <div class="cocktail-data__item">
+                            <a href="/cocktail/?id=<%= data[i].drinks[0].idDrink %>" title="View details"><img src="<%= data[i].drinks[0].strDrinkThumb %>" alt="<%= data[i].drinks[0].strDrink %>"></a>
+                        </div>
+                        <aside class="cocktail-data__item">
+                            <h3>The Basics:</h3>
+                            <ul>
+                                <li><i class="material-icons">local_bar</i>Category: <%= data[i].drinks[0].strCategory %></li>
+                                <li><i class="material-icons">local_bar</i>Type: <%= data[i].drinks[0].strAlcoholic %></li>
+                            </ul>
+                        </aside>
+                        <div class="cocktail-data__item">
+                            <% if (data[i].drinks[0]['strIngredient1'].length) { %>
+                            <h3>Ingredients:</h3>
+                            <ul>
+                                <% for (var t = 1; t < 100; t++) { %>
+                                    <% if (data[i].drinks[0]['strIngredient' + t].length) { %>
+                                        <li><i class="material-icons">local_bar</i><%= data[i].drinks[0]['strIngredient' + t] %></li>
+                                    <% } else { break; } %>
+                                <% } %>
+                            </ul>
                             <% } %>
-                        </ul>
-                    <% } %>
-                <% } %>  
-            <% } else { %>
-                <p>Unable to retrieve data. Please try again later.</p>
+                        </div>
+                    </div>
+                    <button type="button" class="button cocktail-list-button" data-link="">Full Details</button>
+                </div>
             <% } %>
-        </script>
+        <% } else { %>
+            <p>Unable to retrieve data. Please try again later.</p>
+        <% } %>
+    </script>
         
     </body>
 </html>

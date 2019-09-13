@@ -2,13 +2,14 @@
 .frames {
     font-family: 'Beradon Frames';
     text-align: center;
+    padding-top: 32px;
 
     &.frames--large {
-        $rem: 9;
-        font-size: 20rem;
-        line-height: #{$rem}rem;
+        $y: 2;
+        $size: 8;
+        font-size: #{$size}rem;
+        line-height: #{$y}rem;
         color: $orange;
-        margin-bottom: -#{$rem}rem;
-    }
+    }   
     
 }

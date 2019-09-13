@@ -47,7 +47,7 @@ body {
                     &:nth-child(5) { a { background-color: $dark; border-color: $dark; &:hover, &.active { border-color: $lightBlue; } } }
     
                     a {
-                        font-family: 'Roboto Condensed', $defaultFontStack;
+                        font-family: $defaultFontStack;
                         color: #ffffff;
                         text-decoration: none;
                         font-size: #{$baseFontSize + 0.3}rem;
