@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
 	    <meta charset="utf-8" />
-	    <title>Random | Bar Code</title>
+	    <title>Recipe | Popular | Bar Code</title>
     	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	    <meta name="description" content="" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -33,7 +33,7 @@
         <!-- CSS -->
         <link rel="stylesheet" href="/css/style.min.css">
     </head>
-    <body>
+    <body class="pending">
 
     <!-- Skip link - activated on 'tab' -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -58,8 +58,8 @@
             <nav>
                 <ul class="menu">
                     <li><a href="/news/" title="News"><i class="material-icons">chrome_reader_mode</i>News</a></li>
-                    <li><a href="/cocktail/?id=random" title="Random" class="active"><i class="material-icons">help_outline</i>Random</a></li>
-                    <li><a href="/popular/?list=popular" title="Popular"><i class="material-icons">stars</i>Popular</a></li>
+                    <li><a href="/random/?id=random" title="Random"><i class="material-icons">help_outline</i>Random</a></li>
+                    <li><a href="/popular/?list=popular" title="Popular" class="active"><i class="material-icons">stars</i>Popular</a></li>
                     <li><a href="/base/" title="Base"><i class="material-icons">local_drink</i>Base</a></li>
                     <li><a href="/virgin/?list=virgin" title="Virgin"><i class="material-icons">drive_eta</i>Virgin</a></li>
                 </ul>
@@ -69,6 +69,11 @@
 
         <!-- Breadcrumbs -->
         <div class="header__row">
+            <ul class="breadcrumbs">
+                <li><a href="/"><i class="material-icons">home</i> Home</a></li>
+                <li>&gt; <a href="/popular/">Popular</a></li>
+                <li>&gt; Recipe</li>
+            </ul>
         </div>
         
     </header>
@@ -85,8 +90,8 @@
         <nav>
             <ul class="menu">
                 <li><a href="/news/" title="News"><i class="material-icons">chrome_reader_mode</i>News</a></li>
-                <li><a href="/cocktail/?id=random" title="Random" class="active"><i class="material-icons">help_outline</i>Random</a></li>
-                <li><a href="/popular/?list=popular" title="Popular"><i class="material-icons">stars</i>Popular</a></li>
+                <li><a href="/random/?id=random" title="Random"><i class="material-icons">help_outline</i>Random</a></li>
+                <li><a href="/popular/?list=popular" title="Popular" class="active"><i class="material-icons">stars</i>Popular</a></li>
                 <li><a href="/base/" title="Base"><i class="material-icons">local_drink</i>Base</a></li>
                 <li><a href="/virgin/?list=virgin" title="Virgin"><i class="material-icons">drive_eta</i>Virgin</a></li>
             </ul>
@@ -96,13 +101,19 @@
     <div class="splash"></div>
 
     <!-- Main content -->
-    <main id="category-cocktail" class="content">
+    <main id="category-cocktail">
 
         <section class="cocktail-details">
 
             <div class="frames frames--large">r</div>
 
-            <div id="cocktail-data" class="cocktail-data"></div>
+            <div id="cocktail-data" class="cocktail-data">
+                <div id="cocktail-data" class="cocktail-data">
+                    <div class="skeleton">
+                        <div class="skeleton__inner skeleton__full-details"></div>
+                    </div>
+                </div>
+            </div>
 
             <div class="frames frames--large">r</div>
         
@@ -123,7 +134,7 @@
                 <ul class="menu">
                     <li><a href="/" title="Home">Home</a></li>
                     <li><a href="/news/" title="News">News</a></li>
-                    <li><a href="/cocktail/?id=random" title="Random">Random</a></li>
+                    <li><a href="/random/?id=random" title="Random">Random</a></li>
                     <li><a href="/popular/?list=popular" title="Popular">Popular</a></li>
                     <li><a href="/base/" title="Base">Base</a></li>
                     <li><a href="/virgin/?list=virgin" title="Virgin">Virgin</a></li>
@@ -143,6 +154,9 @@
 
     <!-- Adds a cloak to the content when the mobile drawer is open -->
     <div id="cloak"></div>
+
+    <!-- Top of the screen loading bar -->
+    <div class="pending-bar"></div>
 
     <script src="/js/main.min.js"></script>
 
@@ -167,7 +181,7 @@
                     <ul>
                         <% for (var i = 1; i < 100; i++) { %>
                             <% if (data.drinks[0]['strIngredient' + i].length) { %>
-                                <li><i class="material-icons">local_bar</i><%= data.drinks[0]['strIngredient' + i] %><%= data.drinks[0]['strMeasure' + i].length && !data.drinks[0]['strMeasure' + i].match(/\\n/) ? ' - ' + data.drinks[0]['strMeasure' + i] : ''  %></li>
+                                <li><i class="material-icons">local_bar</i><%= data.drinks[0]['strIngredient' + i] %><%= data.drinks[0]['strMeasure' + i].length && data.drinks[0]['strMeasure' + i] !== '\n' ? ' - ' + data.drinks[0]['strMeasure' + i] : ''  %></li>
                             <% } else { break; } %>
                         <% } %>
                     </ul>
