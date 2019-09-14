@@ -25,7 +25,6 @@ Utils.ShrinkHeader = class {
         window.addEventListener('scroll', e => {
             // Event heard. Call the scrollPage function */
             this.scrollPage();
-            console.warn('scrolled');
         }, false);
 
         // Now call the function anyway, so we know where we are after refresh, etc
@@ -103,7 +102,6 @@ Utils.Drawer = class {
      * @return void
      */
     toggleDrawer () {
-        console.warn('clicked');
         // Toggle the class
         this.body.classList.toggle(this.drawerClass);
         // Call the aria change function
@@ -153,10 +151,11 @@ Utils.TemplateEngine = class {
     */
     static createHTML (template, model, destination) {
         const element = document.getElementById(destination);
-        console.warn(destination, element)
         if (element) {
             element.innerHTML = this.templateToHTML(template, model);
         }
+        const event = new Event('templateLoaded');
+        window.dispatchEvent(event);
     }
 
     /**
@@ -169,7 +168,6 @@ Utils.TemplateEngine = class {
     * @return The finished template
     */
     static templateToHTML (str, data) {
-        console.warn('still here');
         const fn = !/\W/.test(str) ?
             this.CACHE[str] = this.CACHE[str] ||
             this.templateToHTML(document.getElementById(str).innerHTML) :
@@ -193,7 +191,6 @@ Utils.TemplateEngine = class {
                     + "');}return p.join('');");
 
         return data ? fn( data ) : fn;
-
     }
 
 };
@@ -229,6 +226,44 @@ Utils.startSplash = function () {
         body.classList.remove('splash-2');
     }, secondTimer);
 }
+
+/**
+ * Set the stylesheet property for video height for mobile devices
+ * 
+ * @return void
+ */
+Utils.getHeightForVideo = function () {
+    const viewHeight = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--viewHeight', `${viewHeight}px`);
+};
+
+/**
+ * Add a click event to the buttons on the cocktail list pages
+ * 
+ * @return void
+ */
+Utils.activateFullDetailButtons = function () {
+    const addClickEvents = () => {
+        const btns = document.querySelectorAll('button.full-details-button');
+        console.warn(btns.length);
+        if (!btns.length) {
+            return;
+        }
+        [].slice.call(btns).forEach(btn => {
+            btn.addEventListener('click', e => {
+                window.location.href = e.target.dataset.link;
+                e.preventDefault();
+            }, false);
+        });
+    };
+    const removePending = () => {
+        document.body.classList.remove('pending');
+    };
+    window.addEventListener('templateLoaded', e => {
+        removePending();
+        addClickEvents();
+    }, false);
+};
 
 
 export default Utils;

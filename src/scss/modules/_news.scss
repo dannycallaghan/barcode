@@ -1,0 +1,215 @@
+.cocktail-news {
+    margin: calc(208px + 16px) auto 16px auto;
+    width: calc(100% - 16px);
+    position: relative;
+
+    article {
+        background-color: $darkBlue;
+        box-shadow: $boxShadow;
+        position: relative;
+        padding: 8px 8px 8px 8px;
+        margin: 0 0 8px 0;
+        overflow: auto;
+
+        h2 {
+            transition: 0.5s;
+            font-size: #{$baseFontSize + 0.6}rem;
+            line-height: #{$baseFontSize + 1}rem;
+            margin: 0;
+            text-transform: uppercase;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis; 
+            color: #fff;
+            a {
+                color: #fff;
+                text-decoration: none;  
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .date {
+            color: $lightBlue;
+            margin: 0 0 8px 0;
+        }
+
+        .source {
+            color: $orange;
+            a {
+                color: #fff;
+            }
+        }
+
+        a {
+            img {
+                width: 100%;
+                margin: 0 0 8px 0;
+                border: solid 1px $orange;
+            }
+
+            &:hover {
+                img {
+                    border-color: $lightBlue;
+                }
+            }
+        }
+
+        .cocktail-news__item {
+
+            p {
+                color: #fff;
+                margin: 0 0 8px 0;
+                font-size: #{$baseFontSize + 0.2}rem;
+                line-height: #{$baseFontSize + 0.6}rem;
+            }
+            
+        }
+
+        button {
+            margin: 0 8px 8px;
+            float: right;
+        }
+
+    }
+
+}
+
+@media(min-width: 400px) {
+    .cocktail-news {
+
+        article {
+    
+            h2 {
+                font-size: #{$baseFontSize + 1.4}rem;
+                line-height: #{$baseFontSize + 1.8}rem;
+            }
+
+            .cocktail-news__item {
+
+                p {
+                    color: #fff;
+                    margin: 0 0 8px 0;
+                    font-size: #{$baseFontSize + 0.3}rem;
+                    line-height: #{$baseFontSize + 0.7}rem;
+                }
+                
+            }
+        
+        }
+
+    }
+}
+
+@media(min-width: 540px) {
+    .cocktail-news {
+    
+        article {
+    
+            h2 {
+                font-size: #{$baseFontSize + 2}rem;
+                line-height: #{$baseFontSize + 2.4}rem;
+            }
+
+        }
+
+    }
+}
+
+@media(min-width: 640px) {
+    .cocktail-news {
+    
+        article {
+
+            h2 {
+                font-size: #{$baseFontSize + 2}rem;
+                line-height: #{$baseFontSize + 2.4}rem;
+            }
+
+        }
+
+    }
+}
+
+@media(min-width: 766px) {
+    .cocktail-news {
+        margin: calc(208px + 32px) auto 32px auto;
+        width: calc(100% - 64px);
+
+        article {
+            padding: 32px 32px 16px 32px;
+            margin-bottom: 32px;
+
+            h2 {
+                font-size: #{$baseFontSize + 1.4}rem;
+                line-height: #{$baseFontSize + 1.8}rem;
+            }
+
+            .cocktail-news__row {
+
+                .cocktail-news__item {
+                    margin: 0 16px 16px 0;
+                    flex-grow: 1;
+                }
+
+                &:first-child {
+                    flex-grow: 0;
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+            }
+
+        }
+
+    }
+
+    #category-cocktail-news {
+
+        .cocktail-news {
+    
+            article {
+    
+                .cocktail-news__row {
+                    display: flex;
+                    flex-direction: row;
+                }
+
+                .cocktail-news__row {
+
+                    img {
+                        max-width: 400px;
+                    }
+    
+                }
+
+            }
+
+        }
+
+    }
+
+    #category-cocktail-article {
+
+        .cocktail-news {
+    
+            article {
+
+                .cocktail-news__item {
+
+                    p {
+                        margin: 0 0 32px 0;
+                        line-height: #{$baseFontSize + 1}rem;
+                    }
+
+                }
+            }
+
+        }
+
+    }
+}

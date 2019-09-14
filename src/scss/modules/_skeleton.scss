@@ -1,0 +1,194 @@
+$loadingColor: $pink; 
+
+.skeleton {
+
+    .skeleton__inner {
+
+        //margin: 0 auto 32px auto;
+        //width: calc(100% - 64px);
+
+        /* usefor for getting the styling right:*/
+        //position: absolute;
+        //left: 0;
+        //top: 0;
+        z-index: 5000;
+
+        background-color: $pale;
+        width: 100%;
+        background-repeat: repeat-y;
+        animation: pulse 1s infinite;
+
+        &.skeleton__list-details {
+
+            height: 500px;
+
+            background-image:
+                linear-gradient( $loadingColor 20px, transparent 0 ),
+                linear-gradient( $loadingColor 280px, transparent 0 ),
+                linear-gradient( $loadingColor 16px, transparent 0 ),
+                ;
+
+            background-size:
+                50% 500px,
+                calc(100% - 32px) 500px,
+                100px 500px,
+                ;
+
+            background-position:
+                center 24px,
+                8px 64px,
+                8px 360px,
+                ;
+
+        }
+
+        &.skeleton__sm-list-details {
+
+            height: 500px;
+
+            background-image:
+                linear-gradient( $loadingColor 32px, transparent 0 ),
+                linear-gradient( $loadingColor 300px, transparent 0 ),
+                ;
+
+            background-size:
+                50% 500px,
+                calc(100% - 32px) 500px,
+                ;
+
+            background-position:
+                center 10px,
+                8px 64px,
+                ;
+
+        }
+
+        &.skeleton__full-details {
+
+            height: 500px;
+
+            background-image:
+                linear-gradient( $loadingColor 32px, transparent 0 ),
+                linear-gradient( $loadingColor 300px, transparent 0 ),
+                ;
+
+            background-size:
+                50% 500px,
+                calc(100% - 32px) 500px,
+                ;
+
+            background-position:
+                center 10px,
+                8px 64px,
+                ;
+
+        }
+        
+    }
+
+}
+
+@media(min-width: 766px) {
+
+    .skeleton {
+
+        .skeleton__inner {
+
+            &.skeleton__list-details {
+
+                height: 500px;
+    
+                background-image:
+                    linear-gradient( $loadingColor 32px, transparent 0 ),
+                    linear-gradient( $loadingColor 280px, transparent 0 ),
+                    linear-gradient( $loadingColor 16px, transparent 0 ),
+                    linear-gradient( $loadingColor 16px, transparent 0 ),
+                    linear-gradient( $loadingColor 14px, transparent 0 ),
+                    ;
+    
+                background-size:
+                    410px 500px,
+                    280px 500px,
+                    100px 500px,
+                    160px 500px,
+                    140px 500px,
+                    ;
+    
+                background-position:
+                    33px 36px,
+                    33px 112px,
+                    328px 122px,
+                    328px 168px,
+                    328px 208px,
+                    ;
+    
+            }
+
+            &.skeleton__sm-list-details {
+
+                height: 500px;
+                width: 300px;
+    
+                background-image:
+                    linear-gradient( $loadingColor 32px, transparent 0 ),
+                    linear-gradient( $loadingColor 300px, transparent 0 ),
+                    ;
+    
+                background-size:
+                    50% 500px,
+                    calc(100% - 32px) 500px,
+                    ;
+    
+                background-position:
+                    center 10px,
+                    8px 64px,
+                    ;
+                    
+            }
+
+            &.skeleton__full-details {
+
+                height: 500px;
+    
+                background-image:
+                    linear-gradient( $loadingColor 42px, transparent 0 ),
+                    linear-gradient( $loadingColor 280px, transparent 0 ),
+                    linear-gradient( $loadingColor 16px, transparent 0 ),
+                    linear-gradient( $loadingColor 16px, transparent 0 ),
+                    linear-gradient( $loadingColor 14px, transparent 0 ),
+                    ;
+    
+                background-size:
+                    410px 500px,
+                    280px 500px,
+                    100px 500px,
+                    160px 500px,
+                    140px 500px,
+                    ;
+    
+                background-position:
+                    center 20px,
+                    33px 112px,
+                    328px 122px,
+                    328px 168px,
+                    328px 208px,
+                    ;
+    
+            }
+
+        }
+
+    }
+
+}
+
+
+@keyframes pulse {
+    0% {
+        opacity: .5
+    }
+
+    100% {
+        opacity: 1
+    }
+}

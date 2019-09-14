@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
 	    <meta charset="utf-8" />
-	    <title>Popular | Bar Code</title>
+	    <title>Random | Bar Code</title>
     	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	    <meta name="description" content="" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -58,8 +58,8 @@
             <nav>
                 <ul class="menu">
                     <li><a href="/news/" title="News"><i class="material-icons">chrome_reader_mode</i>News</a></li>
-                    <li><a href="/random/?id=random" title="Random"><i class="material-icons">help_outline</i>Random</a></li>
-                    <li><a href="/popular/?list=popular" title="Popular" class="active"><i class="material-icons">stars</i>Popular</a></li>
+                    <li><a href="/random/?id=random" title="Random" class="active"><i class="material-icons">help_outline</i>Random</a></li>
+                    <li><a href="/popular/?list=popular" title="Popular"><i class="material-icons">stars</i>Popular</a></li>
                     <li><a href="/base/" title="Base"><i class="material-icons">local_drink</i>Base</a></li>
                     <li><a href="/virgin/?list=virgin" title="Virgin"><i class="material-icons">drive_eta</i>Virgin</a></li>
                 </ul>
@@ -71,7 +71,7 @@
         <div class="header__row">
             <ul class="breadcrumbs">
                 <li><a href="/"><i class="material-icons">home</i> Home</a></li>
-                <li>&gt; Popular</li>
+                <li>&gt; Random</li>
             </ul>
         </div>
         
@@ -89,8 +89,8 @@
         <nav>
             <ul class="menu">
                 <li><a href="/news/" title="News"><i class="material-icons">chrome_reader_mode</i>News</a></li>
-                <li><a href="/random/?id=random" title="Random"><i class="material-icons">help_outline</i>Random</a></li>
-                <li><a href="/popular/?list=popular" title="Popular" class="active"><i class="material-icons">stars</i>Popular</a></li>
+                <li><a href="/random/?id=random" title="Random" class="active"><i class="material-icons">help_outline</i>Random</a></li>
+                <li><a href="/popular/?list=popular" title="Popular"><i class="material-icons">stars</i>Popular</a></li>
                 <li><a href="/base/" title="Base"><i class="material-icons">local_drink</i>Base</a></li>
                 <li><a href="/virgin/?list=virgin" title="Virgin"><i class="material-icons">drive_eta</i>Virgin</a></li>
             </ul>
@@ -100,16 +100,22 @@
     <div class="splash"></div>
 
     <!-- Main content -->
-    <main id="category-list" class="category-list">
+    <main id="category-cocktail">
 
         <section class="cocktail-details">
 
+            <div class="frames frames--large">r</div>
+
             <div id="cocktail-data" class="cocktail-data">
-                <div class="skeleton">
-                    <div class="skeleton__inner skeleton__list-details"></div>
+                <div id="cocktail-data" class="cocktail-data">
+                    <div class="skeleton">
+                        <div class="skeleton__inner skeleton__full-details"></div>
+                    </div>
                 </div>
             </div>
 
+            <div class="frames frames--large">r</div>
+        
         </section>
 
     </main>
@@ -153,38 +159,36 @@
 
     <script src="/js/main.min.js"></script>
 
-    <script id="cocktails_list" type="text/html">
-        <% if (data.length) { %>
-            <% for (var i = 0, x = data.length; i < x; i++) { %>
-                <div class="cocktail-details__cocktail"> 
-                    <h2><a href="/cocktail/?id=<%= data[i].drinks[0].idDrink %>" title="View details"><%= data[i].drinks[0].strDrink %><span>p</span></a></h2>
-                    <div class="cocktail-data__row">
-                        <div class="cocktail-data__item">
-                            <a href="/cocktail/?id=<%= data[i].drinks[0].idDrink %>" title="View details"><img src="<%= data[i].drinks[0].strDrinkThumb %>" alt="<%= data[i].drinks[0].strDrink %>"></a>
-                        </div>
-                        <aside class="cocktail-data__item">
-                            <h3>The Basics:</h3>
-                            <ul>
-                                <li><i class="material-icons">local_bar</i>Category: <%= data[i].drinks[0].strCategory %></li>
-                                <li><i class="material-icons">local_bar</i>Type: <%= data[i].drinks[0].strAlcoholic %></li>
-                            </ul>
-                        </aside>
-                        <div class="cocktail-data__item">
-                            <% if (data[i].drinks[0]['strIngredient1'].length) { %>
-                            <h3>Ingredients:</h3>
-                            <ul>
-                                <% for (var t = 1; t < 100; t++) { %>
-                                    <% if (data[i].drinks[0]['strIngredient' + t].length) { %>
-                                        <li><i class="material-icons">local_bar</i><%= data[i].drinks[0]['strIngredient' + t] %></li>
-                                    <% } else { break; } %>
-                                <% } %>
-                            </ul>
-                            <% } %>
-                        </div>
-                    </div>
-                    <button type="button" class="button full-details-button" data-link="/popular/cocktail/?id=<%= data[i].drinks[0].idDrink %>">Full Details</button>
+    <script id="cocktail_details" type="text/html">
+        <% if (data.drinks.length) { %>
+            <h2><%= data.drinks[0].strDrink %></h2>
+            <div class="cocktail-data__row">
+                <div class="cocktail-data__item">
+                    <img src="<%= data.drinks[0].strDrinkThumb %>" alt="<%= data.drinks[0].strDrink %>">
                 </div>
-            <% } %>
+                <aside class="cocktail-data__item">
+                    <h3>The Basics:</h3>
+                    <ul>
+                        <li><i class="material-icons">local_bar</i>Category: <%= data.drinks[0].strCategory %></li>
+                        <li><i class="material-icons">local_bar</i>Type: <%= data.drinks[0].strAlcoholic %></li>
+                        <li><i class="material-icons">local_bar</i>Glass: <%= data.drinks[0].strGlass %></li>
+                    </ul>
+                </aside>
+                <div class="cocktail-data__item">
+                    <% if (data.drinks[0]['strIngredient1'].length) { %>
+                    <h3>Ingredients:</h3>
+                    <ul>
+                        <% for (var i = 1; i < 100; i++) { %>
+                            <% if (data.drinks[0]['strIngredient' + i].length) { %>
+                                <li><i class="material-icons">local_bar</i><%= data.drinks[0]['strIngredient' + i] %><%= data.drinks[0]['strMeasure' + i].length && data.drinks[0]['strMeasure' + i] !== '\n' ? ' - ' + data.drinks[0]['strMeasure' + i] : ''  %></li>
+                            <% } else { break; } %>
+                        <% } %>
+                    </ul>
+                    <% } %>
+                </div>
+            </div>
+            <h3>Method:</h3> 
+            <p><%= data.drinks[0].strInstructions %></p>
         <% } else { %>
             <p>Unable to retrieve data. Please try again later.</p>
         <% } %>

@@ -3,6 +3,7 @@
     margin: calc(208px + 16px) auto 16px auto;
     width: calc(100% - 16px);
     box-shadow: $boxShadow;
+    position: relative;
 
     .cocktail-data {
         padding: 0 8px 8px 8px;
@@ -219,7 +220,7 @@
     .category-list {
 
         .cocktail-details {
-    
+
             .cocktail-details__cocktail {
                 padding: 24px 32px 32px 32px;
                 overflow: auto;
@@ -227,6 +228,7 @@
 
                 h2 {
                     text-align: left;
+
                     a {
                         span {
                             color: $orange;
@@ -249,6 +251,32 @@
     
             }
         }
+
+        &.category-list--small {
+
+            .cocktail-data {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+
+                .cocktail-details__cocktail {
+                    width: calc((100% / 3) - 64px);
+                    margin: 0 32px 32px 32px;
+
+                    h2 {
+                        font-size: #{$baseFontSize + 1}rem;
+                        line-height: #{$baseFontSize + 1}rem;
+                    }
+
+                    .cocktail-data__row {
+                        width: 100%;
+                    }
+
+                }   
+
+            }
+
+        }
     
     }
 }
@@ -257,9 +285,14 @@
     .cocktail-details {
     
         .cocktail-data {
-    
-            h2 {
-                margin: 4px 0 32px 0;
+
+            .cocktail-details__cocktail {
+                position: relative;
+
+                h2 {
+                    margin: 4px 0 32px 0;
+                }
+
             }
 
         }

@@ -109,7 +109,7 @@ class DrinksAPI {
                 return;
             }
         }
-        //window.location.href = '/';
+        window.location.href = '/';
         return;
     }
 

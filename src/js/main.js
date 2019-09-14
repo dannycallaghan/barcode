@@ -1,4 +1,5 @@
 import DrinksAPI from './drinks-api';
+import News from './news';
 import Utils from './utils';
 
 /**
@@ -35,6 +36,7 @@ document.addEventListener('DOMContentLoaded', event => {
      */
     if (document.getElementById('category-list')) {
         DrinksAPI.getCocktails();
+        Utils.activateFullDetailButtons();
     }
 
     /**
@@ -42,16 +44,22 @@ document.addEventListener('DOMContentLoaded', event => {
      */
     if (document.getElementById('category-cocktail')) {
         DrinksAPI.getCocktail();
+        Utils.activateFullDetailButtons();
     }
 
+    /**
+     * If we're on the News index page, get the all news
+     */
+    if (document.getElementById('category-cocktail-news')) {
+        News.getAllNews();
+        Utils.activateFullDetailButtons();
+    }
 
-
-    // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
-let vh = window.innerHeight * 0.01;
-// Then we set the value in the --vh custom property to the root of the document
-document.documentElement.style.setProperty('--vh', `${vh}px`);
-console.warn(vh);
-
-
+    /**
+     * If we're on an article page page, pass it to the News and let it determine which one to show
+     */
+    if (document.getElementById('category-cocktail-article')) {
+        News.getNews();
+    }
 
 });
