@@ -1,6 +1,13 @@
+import 'whatwg-fetch'
 import DrinksAPI from './drinks-api';
 import News from './news';
 import Utils from './utils';
+
+/**
+ * Kicks everything off
+ * 
+ * /js/main.js
+ */
 
 /**
  * Initialise our main app code when the DOM is ready

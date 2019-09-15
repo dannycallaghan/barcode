@@ -1,13 +1,13 @@
 {
-  "name": "magsmag",
-  "title": "MagsMag",
+  "name": "barcode",
+  "title": "Bar Code",
   "author": "Danny Callaghan",
   "url": "",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dannycallaghan/magsmag.git"
+    "url": "https://github.com/dannycallaghan/barcode.git"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -16,7 +16,6 @@
     "babelify": "^8.0.0",
     "browser-sync": "^2.26.7",
     "browserify": "^16.2.3",
-    "firebase": "^6.6.0",
     "gulp": "^3.9.1",
     "gulp-accessibility": "^3.1.1",
     "gulp-autoprefixer": "^3.1.0",
@@ -35,8 +34,8 @@
     "gulp-webp": "^3.0.0",
     "jshint": "^2.8.0",
     "node-sass": "^4.12.0",
-    "request": "^2.88.0",
     "vinyl-buffer": "^1.0.1",
-    "vinyl-source-stream": "^2.0.0"
+    "vinyl-source-stream": "^2.0.0",
+    "whatwg-fetch": "^3.0.0"
   }
 }

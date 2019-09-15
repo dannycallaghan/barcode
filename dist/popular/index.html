@@ -36,16 +36,16 @@
     <body class="pending">
 
     <!-- Skip link - activated on 'tab' -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#category-list" class="skip-link">Skip to main content</a>
 
     <!-- Header -->
-    <header name="top">
+    <header>
 
         <div class="header__row">
 
             <!-- Logo -->
             <div class="logo">
-                <h1><a href="/"><span>o</span>BarCode<span>p</span></a></h1>
+                <h1><a href="/" name="top"><span>o</span>BarCode<span>p</span></a></h1>
                 <h2>The Mixologist's Magazine</h2>
             </div>
 
@@ -97,14 +97,18 @@
         </nav>
     </div>
 
-    <div class="splash"></div>
-
     <!-- Main content -->
     <main id="category-list" class="category-list">
 
         <section class="cocktail-details">
 
+            <!-- Content area -->
             <div id="cocktail-data" class="cocktail-data">
+                <!-- No JavaScript message -->
+                <noscript>
+                    <p class="no-data"><i class="material-icons">error_outline</i> Uh oh! Apologies, but The Bar Code requires JavaScript to be enabled to display our content. Please enable JavaScript and try again.</p>
+                </noscript>
+                <!-- Content skeleton while we wait for the data -->
                 <div class="skeleton">
                     <div class="skeleton__inner skeleton__list-details"></div>
                 </div>
@@ -151,8 +155,10 @@
     <!-- Top of the screen loading bar -->
     <div class="pending-bar"></div>
 
+    <!-- Our JS -->
     <script src="/js/main.min.js"></script>
 
+    <!-- JS template -->
     <script id="cocktails_list" type="text/html">
         <% if (data.length) { %>
             <% for (var i = 0, x = data.length; i < x; i++) { %>
@@ -182,7 +188,7 @@
                             <% } %>
                         </div>
                     </div>
-                    <button type="button" class="button full-details-button" data-link="/popular/cocktail/?id=<%= data[i].drinks[0].idDrink %>">Full Details</button>
+                    <button type="button" class="button full-details-button" data-link="/popular/cocktail/?id=<%= data[i].drinks[0].idDrink %>">Recipe</button>
                 </div>
             <% } %>
         <% } else { %>

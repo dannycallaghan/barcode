@@ -17,7 +17,9 @@ var gulp            = require('gulp'),
     access          = require('gulp-accessibility'),
     imagemin        = require('gulp-imagemin');
 
-
+/**
+ * Banner to put at the top of the generated JS file
+ */
 var banner = [
   '/*!\n' +
   ' * <%= package.name %>\n' +
@@ -30,6 +32,9 @@ var banner = [
   '\n'
 ].join('');
 
+/**
+ * SASS to CSS
+ */
 gulp.task('css', function () {
     return gulp.src('src/scss/style.scss')
     .pipe(sourcemaps.init())
@@ -44,26 +49,9 @@ gulp.task('css', function () {
     .pipe(browserSync.reload({stream:true}));
 });
 
-gulp.task('build-images', function () {
-    return gulp.src(['src/images/*.jpg'])
-    .pipe(imagemin([
-        imagemin.jpegtran({ progressive: true }),
-    ]))
-    .pipe(gulp.dest('dist/images'));
-});
-
-gulp.task('vendorjs', function () {
-    return gulp.src('src/js/vendor/tail.datetime.min.js')
-    .pipe(rename('vendor.min.js'))
-    .pipe(gulp.dest('dist/js'));
-});
-  
-gulp.task('vendorcss', function () {
-    return gulp.src('src/css/vendor/tail.datetime-default.css')
-    .pipe(rename('vendor.min.css'))
-    .pipe(gulp.dest('dist/css'));
-});
-
+/**
+ * ES6 down to ES5, minify
+ */
 gulp.task('js',function(){
     return browserify({
         entries: 'src/js/main.js',
@@ -85,6 +73,9 @@ gulp.task('js',function(){
     .pipe(browserSync.reload({stream:true, once: true}));
 });
 
+/**
+ * Compress and move images
+ */
 gulp.task('build-images', function () {
     return gulp.src([
             'src/images/*',
@@ -102,6 +93,9 @@ gulp.task('build-images', function () {
         .pipe(gulp.dest('dist/images'));
 });
 
+/**
+ * Serve files locally
+ */
 gulp.task('browser-sync', function() {
     browserSync.init(null, {
         server: {
@@ -109,16 +103,26 @@ gulp.task('browser-sync', function() {
         }
     });
 });
+
+/**
+ * Reload browser on change
+ */
 gulp.task('bs-reload', function () {
     browserSync.reload();
 });
 
+/**
+ * Validate HTML
+ */
 gulp.task('validate-html', function () {
     return gulp.src('dist/**/*.html')
             .pipe(htmlValidator())
             .pipe(htmlValidator.reporter());
 });
 
+/**
+ * Check A11Y
+ */
 gulp.task('ally', function() {
     return gulp.src('dist/**/*.html')
         .pipe(access({
@@ -127,6 +131,9 @@ gulp.task('ally', function() {
         .on('error', console.log);
 });
 
+/**
+ * Default task
+ */
 gulp.task('default', ['js', 'css', 'browser-sync'], function () {
     gulp.watch('src/scss/**/*.scss', ['css']);
     gulp.watch('src/js/**/*.js', ['js']);

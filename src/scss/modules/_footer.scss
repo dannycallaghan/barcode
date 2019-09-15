@@ -1,4 +1,10 @@
-.footer {
+/**
+ * Footer
+ * Styles the footer
+ * 
+ * /scss/modules/_footer.scss
+ */
+ .footer {
     flex-shrink: 0;
     background-color: $darkBlue;
     min-height: 200px;

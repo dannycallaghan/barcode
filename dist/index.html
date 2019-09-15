@@ -34,19 +34,18 @@
         <link rel="stylesheet" href="/css/style.min.css">
     </head>
     <body class="splash-1 splash-2">
-    <!-- <body> -->
 
     <!-- Skip link - activated on 'tab' -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- Header -->
-    <header name="top">
+    <header>
 
         <div class="header__row">
 
             <!-- Logo -->
             <div class="logo">
-                <h1><a href="/"><span>o</span>BarCode<span>p</span></a></h1>
+                <h1><a href="/" name="top"><span>o</span>BarCode<span>p</span></a></h1>
                 <h2>The Mixologist's Magazine</h2>
             </div>
 
@@ -98,7 +97,7 @@
     </div>
 
     <!-- Main content -->
-    <main>
+    <main id="main-content">
         <section class="video-wrapper">
             <!-- Homepage video -->
             <video autoplay loop muted poster="/images/poster-large-2x.jpg">
@@ -108,6 +107,7 @@
                 <p>Sorry, your browser doesn't support embedded videos.</p>
             </video>
         </section>
+        <!-- Homepage text for animation -->
         <div id="splash-screen" class="splash">
             <div class="splash__text">We're glad</div>
             <div class="splash__text">you're here.</div>
@@ -126,6 +126,23 @@
 
     <!-- Our script -->
     <script src="/js/main.min.js"></script>
+
+    <!-- Install our service worker -->
+    <script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator
+                .serviceWorker
+                .register('./sw.js')
+                .then(registration => {
+                    console.info(`ServiceWorker registration successful`);
+                }, err => {
+                    console.warn(err);
+                console.warn(`ServiceWorker registration failed`);
+            });
+        });
+    }
+    </script>
         
     </body>
 </html>

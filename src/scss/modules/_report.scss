@@ -1,0 +1,80 @@
+/**
+ * Report
+ * Used to style the report page
+ * 
+ * /scss/modules/_report.scss
+ */
+ body.report {
+    margin: 32px;
+    background-image: none;
+
+    header {
+        position: static;
+        box-shadow: none;
+
+        h1 {
+            font-size: #{$baseFontSize + 2.6}rem;
+            line-height: #{$baseFontSize + 3}rem;
+            margin: 0 0 8px 0;
+        }
+
+        h2 {
+            font-size: #{$baseFontSize + 1.4}rem;
+            line-height: #{$baseFontSize + 1.8}rem;
+            margin: 0 0 8px 0;
+        }
+
+        p.report__author {
+            font-size: #{$baseFontSize + 0.6}rem;
+            line-height: #{$baseFontSize + 1}rem;
+            margin: 0 0 8px 0;
+        }
+    }
+
+    nav {
+        font-size: #{$baseFontSize + 0.2}rem;
+        line-height: #{$baseFontSize + 0.6}rem;
+        a {
+            color: $dark;
+
+            &:hover {
+                color: $orange;
+            }
+        }
+    }
+
+    hr {
+        border-top: solid 1px $dark;
+        margin: 32px 0 16px 0;
+    }
+
+    section {
+        font-size: #{$baseFontSize + 0.2}rem;
+        line-height: #{$baseFontSize + 0.6}rem;
+
+        h3 {
+            font-size: #{$baseFontSize + 0.8}rem;
+            line-height: #{$baseFontSize + 1.2}rem;
+            color: $darkBlue;
+        }
+
+        h4 {
+            font-size: #{$baseFontSize + 0.6}rem;
+            line-height: #{$baseFontSize + 1}rem;
+        }
+
+        p {
+            margin: 0 0 16px 0;
+        }
+
+        a {
+            color: $orange;
+
+            &:hover {
+                color: $dark;
+            }
+        }
+    }
+
+
+ }

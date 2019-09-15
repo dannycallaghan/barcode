@@ -1,4 +1,10 @@
-.video-wrapper {
+/**
+ * Video
+ * Looks after the video on the homepage
+ * 
+ * /scss/modules/_video.scss
+ */
+ .video-wrapper {
     width: 100%;
     height: 100vh;
     height: calc(var(--viewHeight, 1vh) * 100);

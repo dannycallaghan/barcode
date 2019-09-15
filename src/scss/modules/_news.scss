@@ -1,7 +1,27 @@
-.cocktail-news {
+/**
+ * News
+ * Styles the News pages
+ * 
+ * /scss/modules/_news.scss
+ */
+ .cocktail-news {
     margin: calc(208px + 16px) auto 16px auto;
     width: calc(100% - 16px);
     position: relative;
+
+    .no-data {
+        margin: calc(208px + 16px) auto 16px auto;
+        width: calc(100% - 16px);
+        position: relative;
+        background-color: $pale;
+        box-shadow: $boxShadow;
+        padding: 8px 8px 8px 8px;
+        margin: 0 0 8px 0;
+        min-height: 300px;
+        font-size: 1.2rem;
+        line-height: 2rem;
+        margin: 0 0 8px;
+    }
 
     article {
         background-color: $darkBlue;
@@ -137,6 +157,11 @@
     .cocktail-news {
         margin: calc(208px + 32px) auto 32px auto;
         width: calc(100% - 64px);
+
+        .no-data {
+            padding: 32px 32px 16px 32px;
+            margin-bottom: 32px;
+        }
 
         article {
             padding: 32px 32px 16px 32px;

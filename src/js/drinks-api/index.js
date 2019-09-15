@@ -1,24 +1,56 @@
 import Utils from '../utils';
 import { url } from 'inspector';
 
+/**
+ * DRINKSAPI CLASS
+ * Deals with talking to The Cocktail DB
+ * 
+ * /js/drinks-api/index.js
+ */
 class DrinksAPI {
 
+    /**
+     * Set test mode (get local data if we're testing, remote data if not)
+     */
     static get TEST_MODE () {
         return false;
     }
 
+    /**
+     * Reference to the template used for recipes
+     * 
+     * @return {string} ID of the template
+     */
     static get DETAILS_TEMPLATE () {
         return `cocktail_details`;
     }
 
+    /**
+     * Reference to the template used for the lists
+     * 
+     * @return {string} ID of the template
+     */
     static get LIST_TEMPLATE () {
         return `cocktails_list`;
     }
 
+    /**
+     * IDs for the Popular section, each one is a cocktail
+     * 
+     * @return {string} ID of the template
+     */
     static get POPULAR_IDS () {
         return [11000, 11001, 11002, 11007, 17207];
     }
 
+    /**
+     * Works out which API URL we should be using
+     * 
+     * @param {string} category - What section we're on
+     * @param {number} id - If we're asking for a particular recipe, this is the ID
+     * 
+     * @return {string} The url
+     */
     static API_URL (category, id) {
         let api = `https://www.thecocktaildb.com/api/json/v1/1/`;
         let suffix = this.TEST_MODE ? '.json' : '.php'; 
@@ -48,6 +80,14 @@ class DrinksAPI {
         return `${api}${dest}${suffix}${query}`;
     }
 
+    /**
+     * Get a cocktail recipe from an ID.
+     * 
+     * @param {string} type - What section we're on
+     * @param {number} id - If we're asking for a particular recipe, this is the ID
+     * 
+     * @return void
+     */
     static getCocktailDetails (type, id) {
         const succcess = (results) => {
             Utils.TemplateEngine.createHTML(`${this.DETAILS_TEMPLATE}`, { data: results }, 'cocktail-data');
@@ -58,10 +98,15 @@ class DrinksAPI {
                 succcess(results);	
 		    })
 		    .catch(e => {
-			    // TODO
+                Utils.TemplateEngine.noData('cocktail-data');
             });
     }
 
+    /**
+     * Get a list of cocktails
+     * 
+     * @return void
+     */
     static getCocktails () {
         const query = window.location.search;
         if (query && query.indexOf('list=')) {
@@ -69,7 +114,6 @@ class DrinksAPI {
             if (splitQuery && splitQuery.length) {
                 const listType = splitQuery.toLowerCase();
                 const succcess = (results) => {
-                    console.warn(results);
                     Utils.TemplateEngine.createHTML(`${this.LIST_TEMPLATE}`, { data: results }, 'cocktail-data');
                 };
                 switch (listType) {
@@ -82,7 +126,7 @@ class DrinksAPI {
                                 succcess(results);
                             })
                             .catch(e => {
-                                // TODO
+                                Utils.TemplateEngine.noData('cocktail-data');
                             });
                     break;
                     case 'virgin':
@@ -92,7 +136,7 @@ class DrinksAPI {
                                 succcess(results);
                             })
                             .catch(e => {
-                                // TODO
+                                Utils.TemplateEngine.noData('cocktail-data');
                             });
                     break;
                     default:
@@ -102,7 +146,7 @@ class DrinksAPI {
                                 succcess(results);
                             })
                             .catch(e => {
-                                // TODO
+                                Utils.TemplateEngine.noData('cocktail-data');
                             });
 
                 }
@@ -113,8 +157,12 @@ class DrinksAPI {
         return;
     }
 
+    /**
+     * Determines what type of recipe to show. Random, or by ID. Gets the ID from the url.
+     * 
+     * @return void
+     */
     static getCocktail () {
-        console.warn('still called');
         const query = window.location.search;
         if (query && query.indexOf('id=')) {
             const splitQuery = query.split('id=')[1];
@@ -131,6 +179,7 @@ class DrinksAPI {
         window.location.href = '/';
         return;
     }
+
 
 }
 

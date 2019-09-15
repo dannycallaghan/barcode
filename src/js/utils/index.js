@@ -1,6 +1,8 @@
 /**
  * UTILS CLASS
  * Utility functions used anywhere within the site
+ * 
+ * /js/utils/index.js
  */
 class Utils {}
 
@@ -21,6 +23,11 @@ Utils.ShrinkHeader = class {
      * @return void
      */
     init () {
+        // We don't want this to work on the homepage
+        if (document.querySelectorAll('.video-wrapper').length) {
+            return;
+        }
+
         // Listen for the scroll event */
         window.addEventListener('scroll', e => {
             // Event heard. Call the scrollPage function */
@@ -193,6 +200,16 @@ Utils.TemplateEngine = class {
         return data ? fn( data ) : fn;
     }
 
+    /**
+    * Show an error message if we can't get any info 
+    * 
+    * @param {string}   str - ID of destination template
+    */
+    static noData (str) {
+        document.body.classList.remove('pending');
+        document.getElementById(str).innerHTML = `<p class="no-data"><i class="material-icons">error_outline</i> Uh oh! We're unable to display that infomation. Please check your connection and try again.</p>`;
+    }
+
 };
 
 /**
@@ -245,7 +262,6 @@ Utils.getHeightForVideo = function () {
 Utils.activateFullDetailButtons = function () {
     const addClickEvents = () => {
         const btns = document.querySelectorAll('button.full-details-button');
-        console.warn(btns.length);
         if (!btns.length) {
             return;
         }

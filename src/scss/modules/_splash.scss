@@ -1,5 +1,11 @@
-.splash {
-    position: fixed;
+/**
+ * Splash
+ * Styles for the CSS animation on the homapage
+ * 
+ * /scss/modules/_splash.scss
+ */
+ .splash {
+    position: absolute;
     top: 216px;
     left: 0;
     width: 100%;

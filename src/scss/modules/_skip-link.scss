@@ -1,4 +1,10 @@
-.skip-link {
+/**
+ * Skip Link
+ * A11y skip link
+ * 
+ * /scss/modules/_skip-link.scss
+ */
+ .skip-link {
     position: absolute;
     left: -9999px;
     top: 0;

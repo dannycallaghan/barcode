@@ -1,4 +1,10 @@
-@import 'variables.scss';
+/**
+ * Style
+ * Imports all the SASS modules
+ * 
+ * /scss/modules/style.scss
+ */
+ @import 'variables.scss';
 
 // modules
 @import 'modules/base.scss';
@@ -16,6 +22,7 @@
 @import 'modules/news.scss';
 @import 'modules/normalise.scss';
 @import 'modules/pending.scss';
+@import 'modules/report.scss';
 @import 'modules/skeleton.scss';
 @import 'modules/skip-link.scss';
 @import 'modules/splash.scss';

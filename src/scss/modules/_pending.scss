@@ -1,4 +1,10 @@
-.pending-bar {
+/**
+ * Pending
+ * Styles the the loading bar seen at the top of the screen when waiting for data
+ * 
+ * /scss/modules/_pending.scss
+ */
+ .pending-bar {
     position: fixed;
     top: 0;
     left: 0;

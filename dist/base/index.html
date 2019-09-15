@@ -36,16 +36,16 @@
     <body>
 
     <!-- Skip link - activated on 'tab' -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#category-base-list" class="skip-link">Skip to main content</a>
 
     <!-- Header -->
-    <header name="top">
+    <header>
 
         <div class="header__row">
 
             <!-- Logo -->
             <div class="logo">
-                <h1><a href="/"><span>o</span>BarCode<span>p</span></a></h1>
+                <h1><a href="/" name="top"><span>o</span>BarCode<span>p</span></a></h1>
                 <h2>The Mixologist's Magazine</h2>
             </div>
 
@@ -97,11 +97,10 @@
         </nav>
     </div>
 
-    <div class="splash"></div>
-
     <!-- Main content -->
-    <main class="category-list">
+    <main id="category-base-list" class="category-list">
 
+        <!-- Content area -->
         <section class="cocktail-base">
 
             <div class="cocktail-base__list">
@@ -185,6 +184,7 @@
     <!-- Adds a cloak to the content when the mobile drawer is open -->
     <div id="cloak"></div>
 
+    <!-- Our JS -->
     <script src="/js/main.min.js"></script>
 
     </body>
