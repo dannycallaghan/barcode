@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	    <meta charset="utf-8" />
+	    <title>Report - Bar Code</title>
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	    <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <!-- Web app metadata and icons -->
+        <meta name="theme-color" content="#F2F2B3">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="application-name" content="Bar Code">
+        <link rel="shortcut icon" href="/favicon.ico" sizes="48x48">
+        <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/images/icons//apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/images/icons//apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/images/icons//apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/images/icons//apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/images/icons//apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/images/icons//apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/images/icons//apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/icons//apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="/images/icons//android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/icons//favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/images/icons//favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/icons//favicon-16x16.png">
+        <link rel="manifest" href="/manifest.json">
+        <meta name="msapplication-TileColor" content="#F2F2B3">
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+        <meta name="theme-color" content="#F2F2B3">
+        <!-- CSS -->
+        <link rel="stylesheet" href="/css/style.min.css">
+    </head>
+    <body class="report">
+
+    <!-- Header -->
+    <header id="top">
+
+        <h1>Bar Code - A Mixologist's Magazine</h1>
+        <h2>CM1040 Web Development - Final Project</h2>
+        <p class="report__author">Danny Callaghan | Student Number 190126243/1 | September 2019</p>
+        
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#inspiration">Inspiration</a></li>
+            <li><a href="#accessibility">Accessibility</a></li>
+            <li><a href="#usability">Usability</a></li>
+            <li><a href="#learning">Learning / Discovery</a></li>
+            <li><a href="#features">Best Parts</a></li>
+            <li><a href="#improvements">Improvements</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#appendices">Appendices</a></li>
+        </ul>
+    </nav>
+
+    <hr />
+
+    <main>
+
+        <section id="introduction">
+            <h3>Introduction</h3>
+            <p>Bar Code is a magazine for mixologist's. Having spent a few years as a mixologist between leaving University the first time, and becoming a professional web developer, I still have friend in the industry, and speak to them often. When this project came up, they discussed the idea of having a 'quick, works on all devices, not covered in adverts' recipe book. This is how Bar Code was born.</p>
+            <p>The idea of the site is simply to give mixologist's, and anyone interested in cocktails or the cocktail industry, easy access to cocktail news and recipes, whatever your device; and - I would like to think - whatever the quality of your connection.</p>
+            <p>The structure was easy to settle on - simple, easy, striking navigation; easily readable news articles; and easily discoverable cocktail recipes. After an eye catching <em>Hhomepage</em> - one of the big design trends I'm really enjoying at the moment is background video - we have a <em>News</em> section, and then make recipes easily found; with sections for <em>Popular</em> cocktails; a <em>Random</em> cocktail, which changes everytime; cocktails with a particular, most common, <em>Base</em> ingredient; and for those who don't drink, or the designated drivers, a section for non-alcoholic cocktails, also known as <em>Virgin</em> drinks. I felt this was all the site needed.</em></p>
+            <p>Bar Code, the title, is - I hope - an obvious play on words.</p>
+            <p><a href="#top">Back to top</a></p>
+            <hr />
+        </sectipon>
+
+        <section id="inspiration">
+            <h3>Inspiration</h3>
+            <p>This is difficult to discuss, as this is what I do for a living. As a result, there was nothing 'stand-out' that I used for this particular site.</p>
+            <ul>
+                <li>I keep abreast of the latest web design trends, and - as mentioned above - I'm really into video backgrounds at the moment. I'd say that the site grew from the ideas of having a video background and...</li>
+                <li>I love the use of colour in websites. By that, I don't mean simply a background colour and text colour that aren't white and black. I mean strong use of a striking colour palette. As a result, I always knew that I would make strong use of colour, and this came across in the navigation.</li>
+                <li>I guess that it is worth mentioning developers like Alex Russell and Jake Archibald, both at Google, who are pushing the adoption of Progressive Web Applications (PWAs) and performant, light-weight websites in general. This can be seen on Bar Code in a variety of ways, including no use of CSS frameworks, no use of JS frameworks or libraries, the use of a service worker to cache major assets, icons for all devices, etc, etc.</li>
+            </ul>
+            <p><a href="#top">Back to top</a></p>
+            <hr />
+        </sectipon>
+
+        <section id="accessibility">
+            <h3>Accessibility</h3>
+            <p>As part of my build process, I run my site through <a href="https://github.com/dreamzmaster/gulp-pa11y">gulp-pa11y</a> - a gulp task that automatically audits your website code against Section508, WCAG2A, WCAG2AA (default), WCAG2AAA. The report returned no errors (it should be said that I did receive notices about my use of <em>i</em> tags to display Material Design icons, but these were simply notices and I decided it wasn't causing too many issues).</em></p>
+            <ul>
+                <li>I have a <em>Skip to main content</em> link allowing users to jump over the header content if rquired. This is displayed when first hitting the tab button, or read out first by screen readers.</li>
+                <li>All images make use of the <em>alt</em> attribute, and links - where appropriate - make use of the <em>title</em> attribute.</li>
+                <li>Colour contrasts, between foreground and background, are kept high throughout the site.</li>
+                <li>The markup code is semantic throughout.</li>
+                <li>The site will still load and be navigable without the use of JavaScript, though it will inform you that JavaScript should be enabled to view the content.</li>
+            </ul>
+            <p><a href="#top">Back to top</a></p>
+            <hr />
+        </sectipon>
+
+        <section id="usability">
+            <h3>Usability</h3>
+            <p>I'd like to think that my site is very user friendly.</p>
+            <ul>
+                <li>Navigation is clear and intuitive, and is always in view - we hide it on mobile devices, due to screen sizes, but the navigation toggle button is (again) always in view.</li>
+                <li>Breadcrumbs are available, and the site structure is not so complex that you are ever more than two clicks from your chosen destination.</li>
+                <li><em>Call-to-actions</em> are clear and intuitive, such as the <em>Recipe</em> buttons.</li>
+                <li>The site is highly responsive, from screens with widths of 320px right up to 1200+ pixels. Further, there are no 'jumps' from one size to the next - we transition between different screen sizes.</li>
+                <li>The site will load and navigate without the use of JavaScript, informing you that JavaScript should be enabled to view the content.</li>
+            </ul>
+            <p><a href="#top">Back to top</a></p>
+            <hr />
+        </sectipon>
+
+        <section id="learning">
+            <h3>Learning / Discovery</h3>
+            <p>As stated, I do this for my day-to-day job, and so I was able to use my everyday skills, knowledge and experience to build Bar Code.</p>
+            <p><a href="#top">Back to top</a></p>
+            <hr />
+        </sectipon>
+
+        <section id="features">
+            <h3>Best Parts</h3>
+            <p>What do I like the most about the website? Overall, I'm happy with most things, but I would say that I really love the video on the homepage, and the navigation. I think the colours on the navigation work really well, as does the header/navigation animation when scrolling down the page. I think the responsive aspects of the site are successful, and the JavaScript is minimal - both of these things are satisfying when you don't rely on a framework or library. The content also works well, and I thought the API offered by The Cocktail DB was excellent.</p>
+            <p><a href="#top">Back to top</a></p>
+            <hr />
+        </sectipon>
+
+        <section id="improvements">
+            <h3>Improvements</h3>
+            <p>If I'd have had more time, I was looking to add a <em>Favourites</em> section, allowing bar tenders to 'favourite' a recipe, saving it to local storage, and retrieving it later. Also, I had hoped to cache the results from the API, so that this worked offline, if you'd already visited the page / made the API call previously.</p>
+            <p><a href="#top">Back to top</a></p>
+            <hr />
+        </sectipon>
+
+        <section id="resources">
+            <h3>Resources</h3>
+
+            <h4>Templating</h4>
+
+            <p>I discovered a templating function in, approximately, 2009 written in a blog post by John Resig of jQuery fame. It's tiny (~20 lines!) and works brilliantly, and I've been using for ten years, in personal projects and in Production for a number of companies. When I started this website, there was only ever going to be one templating system used (and only one piece of 'third party' JavaScript).</p>
+            
+            <ul>
+                <li><p class="repor__resource">John Resig, 'JavaScript Micro-Templating', 2008. Blog post <a href="https://johnresig.com/blog/javascript-micro-templating/" target="_blank">https://johnresig.com/blog/javascript-micro-templating/</a></p></li>
+            </ul>
+
+            <h4>Fonts</h4>
+
+            <p>The Font resources on the web always amaze me. For the fonts on the site, I simply did my usual Google, and landed on <a href="https://fontbundles.net" target="_blank">Font Bundles</a>, which offers both free and paid-for fonts. It is here that I discovered a font called <em>Beradon Script</em>, and loved it. I was very lucky as, as it was new, it was being offered for free. The second font I used is the very common Roboto Condensed, which is available for free download from a quick Google search. The icons are Material Design Icons, as I'm a big fan of Material Design, and I find it superior in every way to Bootstrap.</p>
+
+            <ul>
+                <li><p class="repor__resource">BlackCatsMedia, 'Beradon Script', 2019. Font. <a href="https://fontbundles.net/blackcatsmedia/30727-beradon-script-elegant-wedding-font" target="_blank">https://fontbundles.net/blackcatsmedia/30727-beradon-script-elegant-wedding-font</a></a></p></li>
+                <li><p class="repor__resource">Christian Robertson, 'Roboto Condensed', unknown. Font. <a href="https://www.1001fonts.com/roboto-condensed-font.html" target="_blank">https://www.1001fonts.com/roboto-condensed-font.html</a></a></p></li>
+                <li><p class="repor__resource">Google Material Design, 'Material Design Icons', unknown. Icon Pack / Icon Font. <a href="https://material.io/resources" target="_blank">https://material.io/resources</a></a></p></li>
+            </ul>
+
+            <h4>Video</h4>
+
+            <p>I Googled 'free full screen video backgrounds' and found <a href="https://www.pexels.com">Pexels</a>, where I was able to search for 'cocktail' and found my gorgeous video!</p>
+
+            <ul>
+                <li><p class="repor__resource">Engin Akyurt, 'Liquid Being Poured Into A Glass Of Iced Drink', unknown. Video. <a href="https://www.pexels.com/video/liquid-being-poured-into-a-glass-of-iced-drink-2345459/" target="_blank">https://www.pexels.com/video/liquid-being-poured-into-a-glass-of-iced-drink-2345459/</a></a></p></li>
+            </ul>
+
+            <h4>Colour Palette</h4>
+
+            <p>Although I generated the palette myself, my first port of call whenever starting a new pallette is <a href="https://coolors.co/app" target="_blank">Coolors</a>.</p>
+
+            <ul>
+                <li><p class="repor__resource">Coolers, 'Coolers App', unknown. Website / Application. <a href="https://coolors.co/ca054d-3b1c32-a4d4b4-ffcf9c-b96d40" target="_blank">https://coolors.co/ca054d-3b1c32-a4d4b4-ffcf9c-b96d40</a></a></p></li>
+            </ul>
+
+            <h4>Social Media Icons</h4>
+
+            <p>Again, another Google search, and found the following.</p>
+
+            <ul>
+                <li><p class="repor__resource">Alexis Doreau, '50 Free Flat Icons', unknown. Icons. <a href="https://dribbble.com/shots/2235197-50-Free-Flat-Icons-Sketch-Illustrator" target="_blank">https://dribbble.com/shots/2235197-50-Free-Flat-Icons-Sketch-Illustrator</a></a></p></li>
+            </ul>
+
+            <h4>Background Image</h4>
+
+            <p>Looking for repeatable background tiles, and found the following background generator tool, allowing you to choose your own colours, meaning I was able to use the site's colour pallette. Very handy.</p>
+
+            <ul>
+                <li><p class="repor__resource">Pattern Cooler, 'Pattern Cooler', unknown. Website / Application. <a href="https://www.patterncooler.com/" target="_blank">https://www.patterncooler.com/</a></a></p></li>
+            </ul>
+
+            <h4>Conversion Tools</h4>
+
+            <p>I use Convertio a great deal. On Bar Code, I used it to convert my downloaded TTF fonts (above) to WOFF (smaller size, highly compatible), and my downloaded MP4 video (above) to OGV and WEBM (to be compatible with devices that don't use the MP4 codecs).</p>
+
+            <ul>
+                <li><p class="repor__resource">Convertio, 'Convertio', unknown. Website / Application. <a href="https://convertio.co/" target="_blank">https://convertio.co/</a></a></p></li>
+            </ul>
+
+            <h4>Website Content</h4>
+
+            <p>I was a little confused by some of the requirements for this project, none more so that the sourcing of the content. It seems to suggest that we should write our own articles, but I was convinced that couldn't be the case. Firstly, this is a web development course, not a creative writing course. Secondly, what better to show your grasp of web technologies that to be able to take advantage of a free, open source API? There is nothing more <em>web</em>.</p>
+            <p>As a result, using a list of Free APIs found at <a href="https://github.com/public-apis/public-apis" target="_blank">https://github.com/public-apis/public-apis</a>, I found The Cocktail DB, and it proved to be excellent.</p>
+            <p>Sourcing the news articles proved a lot more challenging, as there are few free news APIs on the web, nevermind those that would appeal to mixologists and bar tenders! After hours of searching, I decided that I would simply copy some articles on the web, and credit the source. To keep with the templating idea, I saved these as a local JSON file.</p>
+            
+            <ul>
+                <li><p class="repor__resource">The Cocktail DB, 'The Cocktail DB', unknown. Website / API. <a href="https://www.thecocktaildb.com/" target="_blank">https://www.thecocktaildb.com/</a></a></p></li>
+                <li><p class="repor__resource">The Cocktail Lovers, 'Inspired by the Med with Gin Mare', 2019. News article. <a href="https://www.thecocktaillovers.com/2019/09/inspired-by-the-med-with-gin-mare/" target="_blank">https://www.thecocktaillovers.com/2019/09/inspired-by-the-med-with-gin-mare/</a></p></li>
+                <li><p class="repor__resource">Bill Price, GQ, 'The Connaught Bar unveils its latest showstopper', 2019. News article. <a href="https://www.gq-magazine.co.uk/food-drink/article/the-connaught-bar-unveils-its-latest-showstopper" target="_blank">https://www.gq-magazine.co.uk/food-drink/article/the-connaught-bar-unveils-its-latest-showstopper</a></p></li>
+                <li><p class="repor__resource">Allison Shoemaker, The Takeout, 'The Takeout officially names Aperol Spritz the passable drink of summer', 2019. News article. <a href="https://thetakeout.com/aperol-spritz-not-good-capri-sun-1834672783" target="_blank">https://thetakeout.com/aperol-spritz-not-good-capri-sun-1834672783</a></p></li>
+                <li><p class="repor__resource">World's Best Bars, 'The changing face of cognac', 2019. News article. <a href="https://www.worldsbestbars.com/the-changing-face-of-cognac/" target="_blank">https://www.worldsbestbars.com/the-changing-face-of-cognac/</a></p></li>
+            </ul>
+
+            <p><a href="#top">Back to top</a></p>
+            <hr />
+        </sectipon>
+
+        <section id="appendices">
+            <h3>Appendices</h3>
+            <p>Site Map, Wireframes and Mockups </p>
+            <ul>
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac ante quis ante scelerisque faucibus id non purus. In pellentesque fermentum cursus. Nullam tristique dolor a malesuada bibendum. Proin vel semper arcu. Phasellus ullamcorper imperdiet est, non faucibus magna ornare eget. In sed lectus et sapien aliquet cursus. Etiam sit amet elit dolor. Ut a turpis id sapien hendrerit tincidunt. Integer feugiat, odio ut aliquet finibus, justo ligula tempor mauris, eget efficitur tortor nisi et nisl.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac ante quis ante scelerisque faucibus id non purus. In pellentesque fermentum cursus. Nullam tristique dolor a malesuada bibendum. Proin vel semper arcu. Phasellus ullamcorper imperdiet est, non faucibus magna ornare eget. In sed lectus et sapien aliquet cursus. Etiam sit amet elit dolor. Ut a turpis id sapien hendrerit tincidunt. Integer feugiat, odio ut aliquet finibus, justo ligula tempor mauris, eget efficitur tortor nisi et nisl.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac ante quis ante scelerisque faucibus id non purus. In pellentesque fermentum cursus. Nullam tristique dolor a malesuada bibendum. Proin vel semper arcu. Phasellus ullamcorper imperdiet est, non faucibus magna ornare eget. In sed lectus et sapien aliquet cursus. Etiam sit amet elit dolor. Ut a turpis id sapien hendrerit tincidunt. Integer feugiat, odio ut aliquet finibus, justo ligula tempor mauris, eget efficitur tortor nisi et nisl.</li>
+            </ul>
+            <p><a href="#top">Back to top</a></p>
+            <hr />
+        </sectipon>
+
+    </main>
+
+    <footer>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </footer>
+
+    </body>
+</html>

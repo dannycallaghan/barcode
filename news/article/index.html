@@ -36,16 +36,16 @@
     <body>
 
     <!-- Skip link - activated on 'tab' -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#category-cocktail-article" class="skip-link">Skip to main content</a>
 
     <!-- Header -->
-    <header name="top">
+    <header>
 
         <div class="header__row">
 
             <!-- Logo -->
             <div class="logo">
-                <h1><a href="/"><span>o</span>BarCode<span>p</span></a></h1>
+                <h1><a href="/" name="top"><span>o</span>BarCode<span>p</span></a></h1>
                 <h2>The Mixologist's Magazine</h2>
             </div>
 
@@ -98,12 +98,16 @@
         </nav>
     </div>
 
-    <div class="splash"></div>
-
     <!-- Main content -->
     <main id="category-cocktail-article">
 
-        <section id="cocktail-news" class="cocktail-news"></section>
+        <!-- Content area -->
+        <section id="cocktail-news" class="cocktail-news">
+            <!-- No JavaScript message -->
+            <noscript>
+                <p class="no-data"><i class="material-icons">error_outline</i> Uh oh! Apologies, but The Bar Code requires JavaScript to be enabled to display our content. Please enable JavaScript and try again.</p>
+            </noscript>
+        </section>
 
     </main>
 
@@ -144,8 +148,10 @@
     <!-- Top of the screen loading bar -->
     <div class="pending-bar"></div>
 
+    <!-- Our JS -->
     <script src="/js/main.min.js"></script>
 
+    <!-- JS template -->
     <script id="cocktail_news" type="text/html">
         <% if (data.length) { %>
         <article> 

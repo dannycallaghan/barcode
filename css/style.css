@@ -1,5 +1,23 @@
+/**
+ * Style
+ * Imports all the SASS modules
+ * 
+ * /scss/modules/style.scss
+ */
+/**
+ * Variables
+ * Common values across the site
+ * 
+ * /scss/modules/variables.scss
+ */
 /* Site Colors */
 /* Fonts */
+/**
+ * Base
+ * Shared/default styles
+ * 
+ * /scss/modules/_base.scss
+ */
 * {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility; }
@@ -26,6 +44,12 @@ main {
   position: relative;
   z-index: 2; }
 
+/**
+ * Base Ingredients
+ * Used for the list type found on Base ingredients
+ * 
+ * /scss/modules/_base-ingredients.scss
+ */
 .cocktail-base {
   margin: calc(208px + 16px) auto 16px auto;
   width: calc(100% - 16px); }
@@ -88,6 +112,12 @@ main {
       .cocktail-base .cocktail-base__list-row .cocktail-base__list-item {
         margin: 0 32px 32px 0; } }
 
+/**
+ * Breadcrumbs
+ * Styles the breadcrumbs
+ * 
+ * /scss/modules/_breadcrumbs.scss
+ */
 .breadcrumbs {
   display: -ms-flexbox;
   display: flex;
@@ -117,6 +147,12 @@ main {
   .breadcrumbs {
     margin: 0 0 0 32px; } }
 
+/**
+ * Buttons
+ * Button styling
+ * 
+ * /scss/modules/_buttons.scss
+ */
 .button {
   background: #ccc;
   color: #293241;
@@ -147,12 +183,30 @@ main {
     background: #EE6C4D;
     color: #fff; }
 
+/**
+ * Cocktail Details
+ * Styles the cocktail recipe pages
+ * 
+ * /scss/modules/_details.scss
+ */
 .cocktail-details {
   background-color: #F2F2B3;
   margin: calc(208px + 16px) auto 16px auto;
   width: calc(100% - 16px);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   position: relative; }
+  .cocktail-details .no-data {
+    margin: calc(208px + 16px) auto 16px auto;
+    width: calc(100% - 16px);
+    position: relative;
+    background-color: #F2F2B3;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    padding: 8px 8px 8px 8px;
+    margin: 0 0 8px 0;
+    min-height: 300px;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    margin: 0 0 8px; }
   .cocktail-details .cocktail-data {
     padding: 0 8px 8px 8px; }
     .cocktail-details .cocktail-data h2 {
@@ -227,6 +281,12 @@ main {
       margin: 0 auto 8px auto;
       display: block; }
 
+#category-cocktail .cocktail-details .no-data {
+  margin: 0;
+  width: 100%;
+  background-color: none;
+  box-shadow: none; }
+
 @media (min-width: 400px) {
   .cocktail-details .cocktail-data h2 {
     font-size: 2.4rem;
@@ -246,6 +306,8 @@ main {
   .cocktail-details {
     margin: calc(208px + 32px) auto 32px auto;
     width: calc(100% - 64px); }
+    .cocktail-details .no-data {
+      padding: 32px 32px 32px 32px; }
     .cocktail-details .cocktail-data {
       padding: 0 32px 32px 32px; }
       .cocktail-details .cocktail-data h2 {
@@ -310,6 +372,12 @@ main {
     .cocktail-details .cocktail-data .cocktail-details__cocktail h2 {
       margin: 4px 0 32px 0; } }
 
+/**
+ * Mobile Drawer / Navigation
+ * Styles the mobile navigation, shown on smaller screens
+ * 
+ * /scss/modules/_drawer.scss
+ */
 body .toggle-drawer {
   padding: 12px;
   position: absolute;
@@ -399,6 +467,12 @@ body.body--drawer-visible #cloak {
   body .toggle-drawer {
     display: none !important; } }
 
+/**
+ * Frames
+ * Adds the little design flourish seen on the recipe pages
+ * 
+ * /scss/modules/_frames.scss
+ */
 .frames {
   font-family: 'Beradon Frames';
   text-align: center;
@@ -408,6 +482,12 @@ body.body--drawer-visible #cloak {
     line-height: 2rem;
     color: #EE6C4D; }
 
+/**
+ * Fonts
+ * Non system fonts used on the site
+ * 
+ * /scss/modules/_fonts.scss
+ */
 @font-face {
   font-family: 'Beradon Script';
   src: url("/fonts/Beradon-Script.woff") format("woff"); }
@@ -424,6 +504,12 @@ body.body--drawer-visible #cloak {
   font-family: 'Roboto Condensed';
   src: url("/fonts/Roboto-Condensed-Regular.woff") format("woff"); }
 
+/**
+ * Footer
+ * Styles the footer
+ * 
+ * /scss/modules/_footer.scss
+ */
 .footer {
   -ms-flex-negative: 0;
       flex-shrink: 0;
@@ -496,6 +582,12 @@ body.body--drawer-visible #cloak {
     .footer .footer__row p {
       text-align: right; } }
 
+/**
+ * Icons
+ * Default styling for the material design icons
+ * 
+ * /scss/modules/_icons.scss
+ */
 .material-icons {
   font-family: 'Material Icons';
   font-weight: 400;
@@ -510,6 +602,12 @@ body.body--drawer-visible #cloak {
   -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased; }
 
+/**
+ * Header
+ * Styles the header
+ * 
+ * /scss/modules/_header.scss
+ */
 header {
   min-width: 320px;
   position: fixed;
@@ -674,6 +772,12 @@ body.body--scrolled header .header__row:first-child {
     header .header__row:first-child .logo h2 {
       font-size: 1.6rem; } }
 
+/**
+ * Nav
+ * Styles the main site navigation, on desktop screens
+ * 
+ * /scss/modules/_nav.scss
+ */
 header nav {
   display: none;
   -ms-flex-pack: end;
@@ -760,10 +864,28 @@ header nav {
     header nav ul li a i {
       left: 56px; } }
 
+/**
+ * News
+ * Styles the News pages
+ * 
+ * /scss/modules/_news.scss
+ */
 .cocktail-news {
   margin: calc(208px + 16px) auto 16px auto;
   width: calc(100% - 16px);
   position: relative; }
+  .cocktail-news .no-data {
+    margin: calc(208px + 16px) auto 16px auto;
+    width: calc(100% - 16px);
+    position: relative;
+    background-color: #F2F2B3;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    padding: 8px 8px 8px 8px;
+    margin: 0 0 8px 0;
+    min-height: 300px;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    margin: 0 0 8px; }
   .cocktail-news article {
     background-color: #3D5A80;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
@@ -832,6 +954,9 @@ header nav {
   .cocktail-news {
     margin: calc(208px + 32px) auto 32px auto;
     width: calc(100% - 64px); }
+    .cocktail-news .no-data {
+      padding: 32px 32px 16px 32px;
+      margin-bottom: 32px; }
     .cocktail-news article {
       padding: 32px 32px 16px 32px;
       margin-bottom: 32px; }
@@ -858,6 +983,12 @@ header nav {
     margin: 0 0 32px 0;
     line-height: 2rem; } }
 
+/**
+ * Normilse
+ * Default styling, for a level playing field across browsers
+ * 
+ * /scss/modules/_breadcrumbs.scss
+ */
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -897,6 +1028,12 @@ video {
 a:focus {
   outline-color: #EE6C4D; }
 
+/**
+ * Pending
+ * Styles the the loading bar seen at the top of the screen when waiting for data
+ * 
+ * /scss/modules/_pending.scss
+ */
 .pending-bar {
   position: fixed;
   top: 0;
@@ -935,6 +1072,63 @@ a:focus {
   to {
     left: 100%; } }
 
+/**
+ * Report
+ * Used to style the report page
+ * 
+ * /scss/modules/_report.scss
+ */
+body.report {
+  margin: 32px;
+  background-image: none; }
+  body.report header {
+    position: static;
+    box-shadow: none; }
+    body.report header h1 {
+      font-size: 3.6rem;
+      line-height: 4rem;
+      margin: 0 0 8px 0; }
+    body.report header h2 {
+      font-size: 2.4rem;
+      line-height: 2.8rem;
+      margin: 0 0 8px 0; }
+    body.report header p.report__author {
+      font-size: 1.6rem;
+      line-height: 2rem;
+      margin: 0 0 8px 0; }
+  body.report nav {
+    font-size: 1.2rem;
+    line-height: 1.6rem; }
+    body.report nav a {
+      color: #293241; }
+      body.report nav a:hover {
+        color: #EE6C4D; }
+  body.report hr {
+    border-top: solid 1px #293241;
+    margin: 32px 0 16px 0; }
+  body.report section {
+    font-size: 1.2rem;
+    line-height: 1.6rem; }
+    body.report section h3 {
+      font-size: 1.8rem;
+      line-height: 2.2rem;
+      color: #3D5A80; }
+    body.report section h4 {
+      font-size: 1.6rem;
+      line-height: 2rem; }
+    body.report section p {
+      margin: 0 0 16px 0; }
+    body.report section a {
+      color: #EE6C4D; }
+      body.report section a:hover {
+        color: #293241; }
+
+/**
+ * Skeleton
+ * The content loading boxes seen on API pages
+ * 
+ * /scss/modules/_skeleton.scss
+ */
 .skeleton .skeleton__inner {
   /* usefor for getting the styling right:*/
   z-index: 5000;
@@ -982,6 +1176,12 @@ a:focus {
   100% {
     opacity: 1; } }
 
+/**
+ * Skip Link
+ * A11y skip link
+ * 
+ * /scss/modules/_skip-link.scss
+ */
 .skip-link {
   position: absolute;
   left: -9999px;
@@ -999,8 +1199,14 @@ a:focus {
   color: #fff;
   outline-color: #3D5A80; }
 
+/**
+ * Splash
+ * Styles for the CSS animation on the homapage
+ * 
+ * /scss/modules/_splash.scss
+ */
 .splash {
-  position: fixed;
+  position: absolute;
   top: 216px;
   left: 0;
   width: 100%;
@@ -1091,6 +1297,12 @@ a:focus {
     .splash > div {
       margin: 0 0 24px 8px; } }
 
+/**
+ * Video
+ * Looks after the video on the homepage
+ * 
+ * /scss/modules/_video.scss
+ */
 .video-wrapper {
   width: 100%;
   height: 100vh;
