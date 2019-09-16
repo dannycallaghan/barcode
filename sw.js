@@ -3,7 +3,7 @@
  * 
  * /sw.js
  */
-const swVersion = 6; // Version number
+const swVersion = 8; // Version number
 const staticCacheName = `the-bar-code-static-cache-${swVersion}`; // Cache name
 
 /**
