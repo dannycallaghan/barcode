@@ -2,10 +2,9 @@
  * Normilse
  * Default styling, for a level playing field across browsers
  * 
- * /scss/modules/_breadcrumbs.scss
+ * /scss/modules/_normalise.scss
  */
  html {
-    font-family: sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     box-sizing: border-box;
@@ -19,31 +18,20 @@ body {
     box-sizing: inherit;
 }
 
+section
 article,
+main
 aside,
-details,
-figcaption,
-figure,
 footer,
 header,
 main,
-menu,
 nav,
-section,
-summary {
+section {
     display: block;
 }
 
-audio,
-canvas,
-progress,
 video {
     display: inline-block;
-}
-
-.hidden,
-[hidden] {
-    display: none;
 }
 
 a:focus {

@@ -987,10 +987,9 @@ header nav {
  * Normilse
  * Default styling, for a level playing field across browsers
  * 
- * /scss/modules/_breadcrumbs.scss
+ * /scss/modules/_normalise.scss
  */
 html {
-  font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   box-sizing: border-box; }
@@ -1001,29 +1000,19 @@ body {
 *, *:before, *:after {
   box-sizing: inherit; }
 
+section
 article,
+main
 aside,
-details,
-figcaption,
-figure,
 footer,
 header,
 main,
-menu,
 nav,
-section,
-summary {
+section {
   display: block; }
 
-audio,
-canvas,
-progress,
 video {
   display: inline-block; }
-
-.hidden,
-[hidden] {
-  display: none; }
 
 a:focus {
   outline-color: #EE6C4D; }
@@ -1079,9 +1068,9 @@ a:focus {
  * /scss/modules/_report.scss
  */
 body.report {
-  margin: 32px;
   background-image: none; }
   body.report header {
+    padding: 32px 32px 16px 32px;
     position: static;
     box-shadow: none; }
     body.report header h1 {
@@ -1097,8 +1086,11 @@ body.report {
       line-height: 2rem;
       margin: 0 0 8px 0; }
   body.report nav {
+    padding: 0 32px 32px 32px;
     font-size: 1.2rem;
     line-height: 1.6rem; }
+    body.report nav ul {
+      margin-bottom: 0; }
     body.report nav a {
       color: #293241; }
       body.report nav a:hover {
@@ -1106,22 +1098,30 @@ body.report {
   body.report hr {
     border-top: solid 1px #293241;
     margin: 32px 0 16px 0; }
-  body.report section {
-    font-size: 1.2rem;
-    line-height: 1.6rem; }
-    body.report section h3 {
-      font-size: 1.8rem;
-      line-height: 2.2rem;
-      color: #3D5A80; }
-    body.report section h4 {
-      font-size: 1.6rem;
-      line-height: 2rem; }
-    body.report section p {
-      margin: 0 0 16px 0; }
-    body.report section a {
-      color: #EE6C4D; }
-      body.report section a:hover {
-        color: #293241; }
+  body.report main {
+    padding: 0 32px 32px 32px; }
+    body.report main section {
+      font-size: 1.2rem;
+      line-height: 1.6rem; }
+      body.report main section h3 {
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+        color: #3D5A80; }
+      body.report main section h4 {
+        font-size: 1.6rem;
+        line-height: 2rem; }
+      body.report main section p {
+        margin: 0 0 16px 0; }
+      body.report main section a {
+        color: #EE6C4D; }
+        body.report main section a:hover {
+          color: #293241; }
+  body.report footer {
+    background-color: #293241;
+    padding: 32px;
+    color: #fff; }
+    body.report footer a {
+      color: #fff; }
 
 /**
  * Skeleton

@@ -5,10 +5,11 @@
  * /scss/modules/_report.scss
  */
  body.report {
-    margin: 32px;
+    
     background-image: none;
 
     header {
+        padding: 32px 32px 16px 32px;
         position: static;
         box-shadow: none;
 
@@ -32,6 +33,11 @@
     }
 
     nav {
+        ul {
+            margin-bottom: 0;
+        }
+        
+        padding: 0 32px 32px 32px;
         font-size: #{$baseFontSize + 0.2}rem;
         line-height: #{$baseFontSize + 0.6}rem;
         a {
@@ -48,33 +54,47 @@
         margin: 32px 0 16px 0;
     }
 
-    section {
-        font-size: #{$baseFontSize + 0.2}rem;
-        line-height: #{$baseFontSize + 0.6}rem;
+    main {
+        padding: 0 32px 32px 32px;
 
-        h3 {
-            font-size: #{$baseFontSize + 0.8}rem;
-            line-height: #{$baseFontSize + 1.2}rem;
-            color: $darkBlue;
-        }
+        section {
+            font-size: #{$baseFontSize + 0.2}rem;
+            line-height: #{$baseFontSize + 0.6}rem;
 
-        h4 {
-            font-size: #{$baseFontSize + 0.6}rem;
-            line-height: #{$baseFontSize + 1}rem;
-        }
+            h3 {
+                font-size: #{$baseFontSize + 0.8}rem;
+                line-height: #{$baseFontSize + 1.2}rem;
+                color: $darkBlue;
+            }
 
-        p {
-            margin: 0 0 16px 0;
-        }
+            h4 {
+                font-size: #{$baseFontSize + 0.6}rem;
+                line-height: #{$baseFontSize + 1}rem;
+            }
 
-        a {
-            color: $orange;
+            p {
+                margin: 0 0 16px 0;
+            }
 
-            &:hover {
-                color: $dark;
+            a {
+                color: $orange;
+
+                &:hover {
+                    color: $dark;
+                }
             }
         }
+
     }
 
+    footer {
+        background-color: $dark;
+        padding: 32px;
+        color: #fff;
+        a {
+            color: #fff;
+        }
+
+    }
 
  }

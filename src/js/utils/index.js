@@ -2,6 +2,11 @@
  * UTILS CLASS
  * Utility functions used anywhere within the site
  * 
+ * NOTE:
+ * As credited below, and in the report.html, the function below (templateToHTML)
+ * was written by John Resig and featured in a blog post in 2008. More details
+ * can be found in the report.html file.
+ * 
  * /js/utils/index.js
  */
 class Utils {}
